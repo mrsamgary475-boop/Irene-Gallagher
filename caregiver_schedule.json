@@ -1,0 +1,26 @@
+[
+  {
+    "id": "med-am",
+    "type": "medication",
+    "time": "08:00",
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ],
+    "message": "Take morning medication."
+  },
+  {
+    "id": "grass-weekly",
+    "type": "chore",
+    "time": "10:00",
+    "days": [
+      "sat"
+    ],
+    "message": "Reminder: cut the grass today."
+  }
+]

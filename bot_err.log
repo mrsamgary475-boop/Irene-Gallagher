@@ -1,0 +1,1943 @@
+2026-07-25 13:42:18,431 - __main__ - INFO - Kindroid client initialized
+2026-07-25 13:42:18,534 - __main__ - INFO - Loaded cog: cogs.commands
+2026-07-25 13:42:18,539 - __main__ - INFO - Loaded cog: cogs.homecare
+2026-07-25 13:42:18,546 - __main__ - INFO - Loaded cog: cogs.messages
+2026-07-25 13:42:18,548 - cogs.voice_conversation - INFO - VoiceConversationCog loaded -- STT engine: google
+2026-07-25 13:42:18,548 - __main__ - INFO - Loaded cog: cogs.voice_conversation
+2026-07-25 13:42:18,550 - __main__ - INFO - Starting Discord bot...
+2026-07-25 13:42:18,550 - discord.client - INFO - logging in using static token
+2026-07-25 13:42:19,710 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 153d52ae46bc011785526c19c92eabcc).
+2026-07-25 13:42:21,711 - __main__ - INFO - Bot logged in as Irene Gallagher#2633 (ID: 1529996285141319802)
+2026-07-25 14:04:06,556 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:04:06,562 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:04:06,563 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:04:06,564 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:04:06,746 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:04:06,954 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:04:06,964 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:04:07,955 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:04:09,058 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:04:09,063 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:04:36,586 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:04:36,592 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:04:36,592 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:04:39,071 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:04:39,078 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:04:39,078 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:04:48,359 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:04:48,360 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:04:48,361 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:04:48,361 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:04:48,540 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:04:48,697 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:04:48,703 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:04:49,712 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:04:50,803 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:04:50,809 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:05:06,579 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:05:08,601 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:05:08,601 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:05:08,812 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:05:08,951 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:05:08,957 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:09,083 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:05:09,956 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:05:11,100 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:05:11,105 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:05:18,383 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:05:18,388 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:18,389 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:20,802 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:05:20,812 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:20,814 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:38,602 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:05:38,602 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:38,603 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:41,099 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:05:41,105 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:41,107 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:48,388 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:05:50,396 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:05:50,402 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:05:50,594 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:05:50,753 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:05:50,760 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:05:50,833 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:05:51,771 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:05:52,834 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:05:52,840 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:06:08,621 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:06:10,635 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:06:10,641 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:06:10,818 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:06:10,966 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:06:10,972 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:11,103 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:06:11,995 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:06:13,102 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:06:20,418 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:06:20,419 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:20,425 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:22,834 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:06:22,840 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:22,841 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:40,658 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:06:40,664 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:40,665 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:50,441 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:06:50,643 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:06:50,644 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:50,644 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:06:50,645 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:06:50,831 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:06:50,968 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:06:50,975 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:51,998 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:06:52,450 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:06:52,457 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:06:52,838 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:06:53,086 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:06:53,093 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:06:53,268 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:06:53,401 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:06:53,407 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:54,421 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:06:54,608 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:06:54,742 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:06:54,750 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:06:54,857 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:06:57,775 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 3)
+2026-07-25 14:06:57,985 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-890914c6.discord.media
+2026-07-25 14:06:58,128 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:06:58,135 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:03,139 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 4)
+2026-07-25 14:07:03,343 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord08-bde9cbd9.discord.media
+2026-07-25 14:07:03,709 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:07:03,715 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:10,671 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:07:10,718 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 5)
+2026-07-25 14:07:12,684 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:07:20,669 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:07:20,675 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:20,675 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:22,462 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:07:22,468 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:22,468 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:23,118 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:07:23,123 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:23,123 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:50,686 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:07:52,492 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:07:52,713 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:07:52,718 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:07:52,928 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord14-b1e3aeab.discord.media
+2026-07-25 14:07:53,132 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:07:53,164 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:07:53,165 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:07:54,171 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:07:54,514 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:07:55,143 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:07:55,149 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:08:22,722 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:08:22,729 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:08:22,730 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:08:25,153 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:08:25,158 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:08:25,159 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:08:52,734 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:08:54,756 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:08:54,763 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:08:55,022 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-1a43326f.discord.media
+2026-07-25 14:08:55,170 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:08:55,277 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-07-25 14:08:55,280 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:08:56,289 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:08:57,169 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:09:24,759 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:09:24,766 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:09:24,767 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:09:54,779 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:09:56,804 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:11:10,350 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:11:10,356 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:11:10,356 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:11:10,547 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:11:10,570 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:11:10,571 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1981, in connect
+    raise ClientException('Already connected to a voice channel.')
+discord.errors.ClientException: Already connected to a voice channel.
+2026-07-25 14:11:10,752 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:11:10,759 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:11:11,753 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:11:11,992 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:11:12,125 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:11:12,132 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:11:15,144 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 3)
+2026-07-25 14:11:15,335 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:11:15,465 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:11:15,468 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:11:20,480 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 4)
+2026-07-25 14:11:20,667 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:11:20,811 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:11:20,813 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:11:27,839 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 5)
+2026-07-25 14:11:28,038 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:11:28,172 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 9.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:11:28,185 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:11:37,189 - discord.voice_state - INFO - Voice connection complete.
+2026-07-25 14:11:37,191 - discord.voice_state - INFO - Disconnecting from voice normally, close code 1000.
+2026-07-25 14:11:37,192 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:11:37,192 - cogs.voice_conversation - INFO - VoiceRecvClient connected -- <discord.ext.voice_recv.voice_client.VoiceRecvClient object at 0x000002769B0E5250>
+2026-07-25 14:11:37,193 - cogs.voice_conversation - ERROR - Failed to start voice receive listen()
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 376, in _enable_mic
+    vc.listen(sink)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\ext\voice_recv\voice_client.py", line 142, in listen
+    raise discord.ClientException('Not connected to voice.')
+discord.errors.ClientException: Not connected to voice.
+2026-07-25 14:12:02,958 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:12:02,960 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:12:02,960 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1981, in connect
+    raise ClientException('Already connected to a voice channel.')
+discord.errors.ClientException: Already connected to a voice channel.
+2026-07-25 14:12:02,962 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:12:02,962 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:12:03,142 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:12:03,271 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:12:03,282 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:12:04,308 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:12:04,491 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:12:04,630 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:12:04,633 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:12:07,645 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 3)
+2026-07-25 14:12:07,842 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:12:07,969 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:12:07,975 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:12:12,986 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 4)
+2026-07-25 14:12:13,212 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:12:13,355 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:12:13,362 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:12:20,374 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 5)
+2026-07-25 14:12:20,570 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:12:20,729 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 9.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:12:20,731 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:12:29,735 - discord.voice_state - INFO - Voice connection complete.
+2026-07-25 14:12:29,741 - discord.voice_state - INFO - Disconnecting from voice normally, close code 1000.
+2026-07-25 14:12:29,741 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:12:29,742 - cogs.voice_conversation - INFO - VoiceRecvClient connected -- <discord.ext.voice_recv.voice_client.VoiceRecvClient object at 0x0000027699572270>
+2026-07-25 14:12:29,742 - cogs.voice_conversation - ERROR - Failed to start voice receive listen()
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 376, in _enable_mic
+    vc.listen(sink)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\ext\voice_recv\voice_client.py", line 142, in listen
+    raise discord.ClientException('Not connected to voice.')
+discord.errors.ClientException: Not connected to voice.
+2026-07-25 14:15:28,169 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:15:28,175 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:15:28,175 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1981, in connect
+    raise ClientException('Already connected to a voice channel.')
+discord.errors.ClientException: Already connected to a voice channel.
+2026-07-25 14:15:28,177 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:15:28,177 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:15:28,414 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:15:28,530 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:15:28,537 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:15:29,557 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:15:29,704 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:15:29,863 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:15:29,865 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:15:32,879 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 3)
+2026-07-25 14:15:33,116 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:15:33,247 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:15:33,253 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:15:38,265 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 4)
+2026-07-25 14:15:38,488 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:15:38,624 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:15:38,628 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:15:45,650 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 5)
+2026-07-25 14:15:45,837 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord12-2e19df0c.discord.media
+2026-07-25 14:15:45,965 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 9.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:15:45,969 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:15:54,988 - discord.voice_state - INFO - Voice connection complete.
+2026-07-25 14:15:54,994 - discord.voice_state - INFO - Disconnecting from voice normally, close code 1000.
+2026-07-25 14:15:54,994 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:15:54,995 - cogs.voice_conversation - INFO - VoiceRecvClient connected -- <discord.ext.voice_recv.voice_client.VoiceRecvClient object at 0x000002769B0CB710>
+2026-07-25 14:15:54,995 - cogs.voice_conversation - ERROR - Failed to start voice receive listen()
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 376, in _enable_mic
+    vc.listen(sink)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\ext\voice_recv\voice_client.py", line 142, in listen
+    raise discord.ClientException('Not connected to voice.')
+discord.errors.ClientException: Not connected to voice.
+2026-07-25 14:24:27,454 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:24:27,462 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:27,463 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:24:27,463 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:24:27,638 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-1d6c7cba.discord.media
+2026-07-25 14:24:27,816 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-07-25 14:24:27,820 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:28,828 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:24:29,936 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:24:29,937 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:24:41,336 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:42,709 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Voice
+2026-07-25 14:24:42,710 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:24:42,710 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:24:42,799 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Voice
+2026-07-25 14:24:42,799 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1981, in connect
+    raise ClientException('Already connected to a voice channel.')
+discord.errors.ClientException: Already connected to a voice channel.
+2026-07-25 14:24:42,896 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-1d6c7cba.discord.media
+2026-07-25 14:24:43,326 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-07-25 14:24:43,333 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:44,330 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:24:44,516 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-1d6c7cba.discord.media
+2026-07-25 14:24:44,671 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-07-25 14:24:44,673 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:47,697 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 3)
+2026-07-25 14:24:47,881 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-1d6c7cba.discord.media
+2026-07-25 14:24:48,019 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-07-25 14:24:48,022 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:53,040 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 4)
+2026-07-25 14:24:53,187 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-1d6c7cba.discord.media
+2026-07-25 14:24:53,349 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-07-25 14:24:53,354 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:57,471 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:24:57,472 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:57,473 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:59,941 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:24:59,941 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:24:59,942 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:25:00,365 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 5)
+2026-07-25 14:25:12,721 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:25:12,750 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:25:12,754 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:25:27,481 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:25:29,505 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:25:29,511 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:25:29,692 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-1d6c7cba.discord.media
+2026-07-25 14:25:29,854 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-07-25 14:25:29,855 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:25:29,950 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:25:30,844 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:25:31,941 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:25:31,942 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:25:42,762 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:25:59,515 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:25:59,523 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:25:59,523 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:26:01,952 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:26:01,958 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:26:01,959 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:26:29,538 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:26:31,547 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:26:31,553 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:26:31,730 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-1d6c7cba.discord.media
+2026-07-25 14:26:31,864 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-07-25 14:26:31,868 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:26:31,959 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:26:32,862 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:26:33,982 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:27:01,567 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:27:01,574 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:27:01,575 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530615689478672424 (Guild ID 1529997509337026791)
+2026-07-25 14:27:31,579 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:27:33,590 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:28:44,656 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:28:44,662 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:28:44,663 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:28:44,663 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:28:44,876 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:28:45,258 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:28:45,264 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:28:46,264 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:28:47,374 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:28:47,381 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:29:14,444 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:14,676 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:29:14,677 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:14,678 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:15,848 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:29:15,855 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:29:15,856 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:29:15,927 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:29:15,928 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1981, in connect
+    raise ClientException('Already connected to a voice channel.')
+discord.errors.ClientException: Already connected to a voice channel.
+2026-07-25 14:29:16,030 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:29:16,210 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:29:16,211 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:17,221 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:29:17,392 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:29:17,397 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:17,398 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:44,696 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:29:45,850 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:29:45,855 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:45,855 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:46,706 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:29:46,713 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:29:46,925 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:29:47,149 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:29:47,156 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:29:47,395 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:29:48,162 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:29:49,406 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:29:49,411 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:30:10,241 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:10,248 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:15,854 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:30:16,732 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:30:16,738 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:16,738 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:19,412 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:30:19,418 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:19,419 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:29,276 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:30:29,283 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:30:29,283 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:30:29,354 - cogs.voice_conversation - INFO - Connecting VoiceRecvClient to Irene
+2026-07-25 14:30:29,354 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1981, in connect
+    raise ClientException('Already connected to a voice channel.')
+discord.errors.ClientException: Already connected to a voice channel.
+2026-07-25 14:30:29,525 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:30:29,688 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:30:29,691 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:30,704 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:30:30,945 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:30:31,074 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:30:31,082 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:34,098 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 3)
+2026-07-25 14:30:34,245 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:30:34,391 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:30:34,398 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:39,413 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 4)
+2026-07-25 14:30:39,592 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:30:39,721 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:30:39,726 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:46,724 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 5)
+2026-07-25 14:30:46,755 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:30:48,764 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:30:48,770 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:30:48,951 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:30:49,083 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:30:49,089 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:49,416 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:30:50,090 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:30:51,427 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:30:59,292 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:30:59,298 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:30:59,298 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:31:18,782 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:31:18,788 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:31:18,788 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:31:24,225 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:31:24,231 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:31:24,232 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:31:24,232 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:31:24,417 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:31:24,563 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:31:24,566 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:31:25,580 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:31:26,688 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:31:26,694 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:31:29,308 - cogs.voice_conversation - ERROR - Failed to connect VoiceRecvClient
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 358, in _enable_mic
+    vc = await self._connect_recv_client(ctx, channel)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\voice_conversation.py", line 164, in _connect_recv_client
+    vc = await channel.connect(timeout=30.0, reconnect=True, cls=voice_recv.VoiceRecvClient)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:31:48,782 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:31:50,794 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:31:54,221 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:31:54,227 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:31:54,228 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:31:56,697 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:31:56,698 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:31:56,698 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:17,063 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:32:17,069 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:17,070 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:32:17,070 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:32:17,278 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:32:17,469 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:32:17,477 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:18,485 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:32:19,578 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:32:19,584 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:32:24,228 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:32:26,248 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:32:26,254 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:32:26,465 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:32:26,621 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:32:26,622 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:26,703 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:32:27,639 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:32:28,717 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:32:28,723 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:32:47,080 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:32:47,085 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:47,086 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:49,585 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:32:49,591 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:49,591 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:56,258 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:32:56,264 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:56,265 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:58,735 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:32:58,741 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:32:58,741 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:33:17,107 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:33:19,127 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:33:19,133 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:33:19,317 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:33:19,463 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:33:19,464 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:33:19,571 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:33:20,455 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:33:21,571 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:33:21,577 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:33:26,254 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:33:28,260 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:33:28,266 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:33:28,442 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:33:28,594 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:33:28,597 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:33:28,744 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:33:29,610 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:33:30,753 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:33:49,134 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:33:49,140 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:33:49,140 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:33:51,570 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:33:51,602 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:33:51,603 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:33:58,292 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:33:58,297 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:33:58,298 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:34:19,161 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:34:21,181 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:34:21,186 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:34:21,375 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:34:21,551 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:34:21,551 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:34:21,601 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:34:22,570 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:34:23,616 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:34:28,315 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:34:30,341 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:34:51,175 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:34:51,181 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:34:51,182 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:35:21,182 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:35:23,201 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:37:30,638 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:37:30,644 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:37:30,645 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:37:30,645 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:37:30,897 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:37:31,047 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:37:31,048 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:37:32,062 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:37:33,172 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:37:33,178 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:38:00,644 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:38:00,650 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:38:00,651 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:38:03,194 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:38:03,201 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:38:03,202 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:38:30,658 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:38:32,667 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:38:32,672 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:38:32,856 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:38:33,024 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:38:33,030 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:38:33,212 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:38:34,054 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:38:35,211 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:38:35,216 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:39:02,698 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:39:02,704 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:39:02,705 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:39:05,221 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:39:05,224 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:39:05,231 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:39:32,689 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:39:34,708 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:39:34,709 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:39:34,878 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:39:35,024 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:39:35,030 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:39:35,238 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:39:36,033 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:39:37,264 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:40:04,712 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:40:04,719 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:40:04,720 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:40:34,740 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: 
+2026-07-25 14:40:36,752 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 407, in _inner_connect
+    await self._wait_for_state(ConnectionFlowState.got_both_voice_updates)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 559, in _wait_for_state
+    await sane_wait_for([self._state_event.wait()], timeout=timeout)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\utils.py", line 735, in sane_wait_for
+    done, pending = await asyncio.wait(ensured, timeout=timeout, return_when=asyncio.ALL_COMPLETED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 464, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 550, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1992, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect, self_deaf=self_deaf, self_mute=self_mute)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_client.py", line 306, in connect
+    await self._connection.connect(
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 380, in connect
+    await self._connector
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 384, in _wrap_connect
+    await self._connect(*args)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 429, in _connect
+    await asyncio.wait_for(
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+2026-07-25 14:42:52,217 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:42:52,223 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:42:52,224 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:42:52,224 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:42:52,474 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:42:53,145 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:42:53,152 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:42:54,152 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:42:55,247 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:42:55,256 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:43:22,248 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:43:22,253 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:22,254 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:25,276 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:43:25,279 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:25,280 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:52,274 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: 
+2026-07-25 14:43:52,431 - cogs.commands - WARNING - Voice connect attempt 1 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:43:52,435 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:52,436 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:43:52,437 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:43:52,630 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:43:52,782 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:43:52,783 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:53,798 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:43:54,297 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:43:54,303 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:43:54,888 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:43:54,895 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:55,281 - cogs.commands - WARNING - Voice connect attempt 2 failed for guild 1529997509337026791: 
+2026-07-25 14:43:56,972 - discord.voice_state - INFO - Connecting to voice...
+2026-07-25 14:43:56,978 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2026-07-25 14:43:57,172 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: c-ord11-5762304d.discord.media
+2026-07-25 14:43:57,297 - cogs.commands - WARNING - Voice connect attempt 3 failed for guild 1529997509337026791: Already connected to a voice channel.
+2026-07-25 14:43:57,300 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:57,331 - discord.voice_state - ERROR - Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\voice_state.py", line 583, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\gateway.py", line 1039, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2026-07-25 14:43:57,332 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:43:58,328 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 2)
+2026-07-25 14:43:59,391 - cogs.commands - ERROR - Failed to join voice channel
+Traceback (most recent call last):
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 154, in join
+    await self._connect_voice_channel(ctx.guild, channel)
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 64, in _connect_voice_channel
+    raise last_error or RuntimeError("Voice connection failed")
+  File "C:\Users\Andre Norris\kindroid-discord-bot\cogs\commands.py", line 53, in _connect_voice_channel
+    return await channel.connect(timeout=timeout, reconnect=True, cls=client_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andre Norris\kindroid-discord-bot\.venv\Lib\site-packages\discord\abc.py", line 1981, in connect
+    raise ClientException('Already connected to a voice channel.')
+discord.errors.ClientException: Already connected to a voice channel.
+2026-07-25 14:44:22,436 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:44:22,441 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:44:22,442 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:44:24,298 - discord.voice_state - INFO - Timed out connecting to voice
+2026-07-25 14:44:24,298 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)
+2026-07-25 14:44:24,300 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1530563400164446358 (Guild ID 1529997509337026791)

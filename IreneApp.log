@@ -1,0 +1,38 @@
+2026-07-26 13:10:58,405 ERROR irene.desktop_entry: Startup import failure (RuntimeError: MONGO_URL and DB_NAME are required. Configure them in .env before launching IreneApp.).
+Traceback (most recent call last):
+  File "desktop_entry.py", line 73, in main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "backend\server.py", line 41, in <module>
+RuntimeError: MONGO_URL and DB_NAME are required. Configure them in .env before launching IreneApp.
+
+2026-07-26 13:11:37,453 ERROR irene.desktop_entry: Startup import failure (RuntimeError: MONGO_URL and DB_NAME are required. Configure them in .env before launching IreneApp.).
+Traceback (most recent call last):
+  File "desktop_entry.py", line 73, in main
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "backend\server.py", line 41, in <module>
+RuntimeError: MONGO_URL and DB_NAME are required. Configure them in .env before launching IreneApp.
+
+2026-07-26 13:12:47,699 INFO irene.desktop_entry: Launching IreneApp from C:\Users\Andre Norris\kindroid-discord-bot
+2026-07-26 13:12:47,701 INFO irene.desktop_entry: Runtime env file expected at C:\Users\Andre Norris\kindroid-discord-bot\.env
+2026-07-26 13:49:32,311 INFO irene.desktop_entry: Launching IreneApp from C:\Users\Andre Norris\kindroid-discord-bot
+2026-07-26 13:49:32,311 INFO irene.desktop_entry: Runtime env file expected at C:\Users\Andre Norris\kindroid-discord-bot\.env
+2026-07-26 13:49:33,431 ERROR asyncio: Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "asyncio\events.py", line 88, in _run
+  File "asyncio\proactor_events.py", line 165, in _call_connection_lost
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-07-26 14:14:26,201 INFO irene.desktop_entry: Launching IreneApp from C:\Users\Andre Norris\kindroid-discord-bot
+2026-07-26 14:14:26,201 INFO irene.desktop_entry: Runtime env file expected at C:\Users\Andre Norris\kindroid-discord-bot\.env
+2026-07-26 14:28:40,987 INFO irene.desktop_entry: Launching IreneApp from C:\Users\Andre Norris\kindroid-discord-bot
+2026-07-26 14:28:40,994 INFO irene.desktop_entry: Runtime env file expected at C:\Users\Andre Norris\kindroid-discord-bot\.env
+2026-07-26 15:29:45,531 INFO irene.desktop_entry: Launching IreneApp from C:\Users\Andre Norris\kindroid-discord-bot
+2026-07-26 15:29:45,531 INFO irene.desktop_entry: Runtime env file expected at C:\Users\Andre Norris\kindroid-discord-bot\.env
+2026-07-26 15:56:52,970 INFO irene.desktop_entry: Launching IreneApp from C:\Users\Andre Norris\kindroid-discord-bot
+2026-07-26 15:56:52,970 INFO irene.desktop_entry: Runtime env file expected at C:\Users\Andre Norris\kindroid-discord-bot\.env
