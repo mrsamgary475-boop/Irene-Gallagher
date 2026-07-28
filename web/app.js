@@ -1,12 +1,14 @@
 // ── State ─────────────────────────────────────────────
 const DEFAULT_KEY = "kn_9686bcf1-b1dd-424c-b02b-c06e1441449c";
 const DEFAULT_AI_ID = "RwTcLQXQ3rMerS7qkZUC";
+const DEFAULT_AVATAR = "https://images.pexels.com/photos/1398342438/pexels-photo-1398342438.jpeg?auto=compress&cs=tinysrgb&w=600";
 
 let mood = localStorage.getItem("irene_mood") || "intimate";
 let username = localStorage.getItem("irene_username") || "baby";
 let partnerName = localStorage.getItem("irene_partnername") || "Irene";
 let kindroidKey = localStorage.getItem("irene_kindroid_key") || DEFAULT_KEY;
 let aiId = localStorage.getItem("irene_ai_id") || DEFAULT_AI_ID;
+let avatarUrl = localStorage.getItem("irene_avatar_url") || DEFAULT_AVATAR;
 let speakerOn = true;
 let recognition = null;
 let isListening = false;
@@ -20,17 +22,15 @@ const moodGreetings = {
 
 // ── DOM Helpers ──────────────────────────────────────
 const $ = (id) => document.getElementById(id);
-const avatar = () => $("avatar-orb");
-const status = () => $("video-status");
 
 function setAvatarState(state) {
-  const a = avatar();
-  a.classList.remove("listening", "speaking", "thinking");
-  if (state) a.classList.add(state);
+  const frame = $("avatar-frame");
+  frame.classList.remove("listening", "speaking", "thinking");
+  if (state) frame.classList.add(state);
 }
 
 function setStatus(text, cls) {
-  const s = status();
+  const s = $("video-status");
   s.textContent = text;
   s.classList.remove("active", "listening");
   if (cls) s.classList.add(cls);
@@ -70,14 +70,7 @@ async function sendToBackend(message) {
     const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message,
-        mood,
-        username,
-        partnerName,
-        apiKey: kindroidKey,
-        aiId,
-      }),
+      body: JSON.stringify({ message, mood, username, partnerName, apiKey: kindroidKey, aiId }),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
@@ -126,8 +119,7 @@ function startListening(event) {
     addTranscript("her", "Voice input isn't supported in this browser. Try typing instead.");
     return;
   }
-  const btn = $("mic-btn");
-  btn.classList.add("active");
+  $("mic-btn").classList.add("active");
   isListening = true;
   setAvatarState("listening");
   setStatus("Listening...", "listening");
@@ -145,9 +137,9 @@ function startListening(event) {
     setStatus("Tap to talk");
   };
   recognition.onend = () => {
-    btn.classList.remove("active");
+    $("mic-btn").classList.remove("active");
     isListening = false;
-    if (!window.speechSynthesis.speaking) {
+    if (!window.speechSynthesis || !window.speechSynthesis.speaking) {
       setAvatarState(null);
       setStatus("Tap to talk");
     }
@@ -162,7 +154,7 @@ function stopListening(event) {
 
 function toggleSpeaker() {
   speakerOn = !speakerOn;
-  $("speaker-btn").querySelector(".ctrl-icon").textContent = speakerOn ? "On" : "Off";
+  $("speaker-btn").querySelector(".ctrl-icon").textContent = speakerOn ? "Sound On" : "Sound Off";
   if (!speakerOn && window.speechSynthesis) {
     window.speechSynthesis.cancel();
     setAvatarState(null);
@@ -184,6 +176,7 @@ function openSettings() {
   $("set-partnername").value = partnerName;
   $("set-kindroid-key").value = kindroidKey;
   $("set-ai-id").value = aiId;
+  $("set-avatar-url").value = avatarUrl;
   $("settings-panel").classList.remove("hidden");
   $("overlay").classList.remove("hidden");
 }
@@ -193,10 +186,13 @@ function saveSettings() {
   partnerName = $("set-partnername").value.trim() || "Irene";
   kindroidKey = $("set-kindroid-key").value.trim() || DEFAULT_KEY;
   aiId = $("set-ai-id").value.trim() || DEFAULT_AI_ID;
+  avatarUrl = $("set-avatar-url").value.trim() || DEFAULT_AVATAR;
   localStorage.setItem("irene_username", username);
   localStorage.setItem("irene_partnername", partnerName);
   localStorage.setItem("irene_kindroid_key", kindroidKey);
   localStorage.setItem("irene_ai_id", aiId);
+  localStorage.setItem("irene_avatar_url", avatarUrl);
+  $("avatar-img").src = avatarUrl;
   closeAllPanels();
 }
 
@@ -214,12 +210,12 @@ function closeAllPanels() {
 if (window.speechSynthesis) {
   window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 }
+$("avatar-img").src = avatarUrl;
 
 setTimeout(() => {
   addTranscript("her", moodGreetings[mood] || moodGreetings.intimate);
 }, 800);
 
-// Expose to inline handlers
 window.setMood = setMood;
 window.toggleSpeaker = toggleSpeaker;
 window.startListening = startListening;
