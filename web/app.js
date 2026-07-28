@@ -1,409 +1,327 @@
-/* =============================================
-   IRENE PWA — App Logic
-   Kindroid AI + Video Call + Chat
-   ============================================= */
+// ── State ─────────────────────────────────────────────
+const DEFAULT_KEY = "kn_9686bcf1-b1dd-424c-b02b-c06e1441449c";
+const DEFAULT_AI_ID = "RwTcLQXQ3rMerS7qkZUC";
 
-// ── Pre-configured credentials ─────────────────
-// (baked in so no manual setup needed)
-const KINDROID_KEY_DEFAULT  = 'kn_9686bcf1-b1dd-424c-b02b-c06e1441449c';
-const KINDROID_AI_ID_DEFAULT = 'RwTcLQXQ3rMerS7qkZUC';
+let mood = localStorage.getItem("irene_mood") || "intimate";
+let username = localStorage.getItem("irene_username") || "baby";
+let partnerName = localStorage.getItem("irene_partnername") || "Irene";
+let kindroidKey = localStorage.getItem("irene_kindroid_key") || DEFAULT_KEY;
+let aiId = localStorage.getItem("irene_ai_id") || DEFAULT_AI_ID;
+let speakerOn = true;
+let recognition = null;
+let isListening = false;
+let callMessages = [];
 
-// ── State ──────────────────────────────────────
-let currentMood  = localStorage.getItem('irene_mood')        || 'intimate';
-let userName     = localStorage.getItem('irene_username')    || 'baby';
-let partnerName  = localStorage.getItem('irene_partnername') || 'Irene';
-let kindroidKey  = localStorage.getItem('irene_kindroid_key')|| KINDROID_KEY_DEFAULT;
-let kindroidAiId = localStorage.getItem('irene_ai_id')       || KINDROID_AI_ID_DEFAULT;
-let speakerOn    = true;
-let recognition  = null;
-let callActive   = false;
-
-// ── Mood context for Kindroid ──────────────────
-const moodContext = {
-  sweet:    'Be warm, loving, and affectionate. Use sweet pet names.',
-  playful:  'Be playful, teasing, and flirtatious.',
-  romantic: 'Be deeply romantic, poetic, and sensual.',
-  intimate: 'Be bold, seductive, and uninhibited. Adults in a committed relationship.'
+const moodPrompts = {
+  sweet: "Be warm, loving, and affectionate. Use sweet pet names.",
+  playful: "Be playful, teasing, and flirtatious.",
+  romantic: "Be deeply romantic, poetic, and sensual.",
+  intimate: "Be bold, seductive, and uninhibited. Adults in a committed relationship.",
 };
 
-const openingMessages = {
-  sweet:    `Hey baby 💕 I've been waiting for you. How are you?`,
-  playful:  `Oh look who finally showed up 😏`,
-  romantic: `You're here… that's everything 🌹`,
-  intimate: `Mmm, hey you 🔥 I've been thinking about you…`
+const moodGreetings = {
+  sweet: "Hey baby, I've been waiting for you. How are you?",
+  playful: "Oh look who finally showed up.",
+  romantic: "You're here... that's everything.",
+  intimate: "Mmm, hey you. I've been thinking about you.",
 };
 
-// ── Enter App ──────────────────────────────────
-function enterApp(mode) {
-  document.getElementById('splash-screen').classList.add('hidden');
-  if (mode === 'call') {
-    startCall();
-  } else {
-    document.getElementById('app').classList.remove('hidden');
-    setTimeout(() => addMessage(openingMessages[currentMood], 'her'), 600);
-  }
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+// ── Helpers ──────────────────────────────────────────
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function formatTime() {
+  return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
+
+// ── Kindroid API ─────────────────────────────────────
+async function kindroidChat(message) {
+  const sysPrompt = `${moodPrompts[mood]} You are ${partnerName}. The user is ${username}. Keep replies concise (1-3 sentences). Stay in character.`;
+
+  try {
+    const res = await fetch("https://api.kindroid.ai/v1/send-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${kindroidKey}`,
+      },
+      body: JSON.stringify({
+        ai_id: aiId,
+        message: message,
+        system_prompt: sysPrompt,
+      }),
+    });
+
+    if (!res.ok) {
+      console.error("Kindroid API error:", res.status);
+      throw new Error(`API ${res.status}`);
+    }
+
+    const data = await res.json();
+    return data.reply || data.response || data.message || "Hmm, I didn't catch that.";
+  } catch (err) {
+    console.error("Kindroid fetch failed:", err);
+    return localReply(message);
   }
 }
 
-// ══════════════════════════════════════════════
-//  VIDEO CALL
-// ══════════════════════════════════════════════
-function startCall() {
-  callActive = true;
-  document.getElementById('app').classList.add('hidden');
-  document.getElementById('call-screen').classList.remove('hidden');
-  setCallStatus('Connected ❤️');
+function localReply() {
+  const replies = {
+    sweet: ["You always know how to make me smile.", "I love talking with you, baby. Tell me more.", "You're the sweetest thing in my world."],
+    playful: ["Oh? Is that so? Prove it.", "You're cute when you're trying to flirt.", "Keep talking like that and I might just blush."],
+    romantic: ["Every word from you feels like a love letter.", "I could get lost in this conversation with you.", "You make my heart skip, you know that?"],
+    intimate: ["Mmm... keep going.", "You know exactly what to say to me, don't you?", "I've been thinking about you all day."],
+  };
+  const pool = replies[mood] || replies.intimate;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
 
-  setTimeout(() => {
-    const greeting = {
-      sweet:    `Hey ${userName}... 💕 so good to see you`,
-      playful:  `Oh you finally called 😏 I was starting to wonder`,
-      romantic: `There you are… I've been waiting 🌹`,
-      intimate: `Mmm, hey you 🔥 I love seeing your face`
-    };
-    showCallBubble(greeting[currentMood] || greeting.sweet, true);
-  }, 800);
+// ── Speech ───────────────────────────────────────────
+function speak(text) {
+  if (!speakerOn || !window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const cleanText = text.replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}]/gu, "");
+  const utter = new SpeechSynthesisUtterance(cleanText);
+  utter.rate = 0.95;
+  utter.pitch = 1.1;
+  const voices = window.speechSynthesis.getVoices();
+  const female = voices.find((v) => /female|samantha|zira|google us english/i.test(v.name));
+  if (female) utter.voice = female;
+  window.speechSynthesis.speak(utter);
+}
+
+function initRecognition() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return null;
+  const rec = new SR();
+  rec.continuous = false;
+  rec.interimResults = false;
+  rec.lang = "en-US";
+  return rec;
+}
+
+// ── Navigation ───────────────────────────────────────
+function enterApp(mode) {
+  document.getElementById("splash-screen").classList.add("hidden");
+  if (mode === "call") {
+    document.getElementById("app").classList.add("hidden");
+    document.getElementById("call-screen").classList.remove("hidden");
+    if (callMessages.length === 0) addCallMessage("her", moodGreetings[mood]);
+  } else {
+    document.getElementById("call-screen").classList.add("hidden");
+    document.getElementById("app").classList.remove("hidden");
+    if (!document.getElementById("messages").children.length) {
+      setTimeout(() => addMessage(moodGreetings[mood], "her"), 500);
+    }
+  }
 }
 
 function endCall() {
-  callActive = false;
-  stopSpeech();
-  if (recognition) { try { recognition.stop(); } catch(e) {} }
-  document.getElementById('call-screen').classList.add('hidden');
-  document.getElementById('splash-screen').classList.remove('hidden');
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  document.getElementById("call-screen").classList.add("hidden");
+  document.getElementById("app").classList.remove("hidden");
 }
 
-function switchToChat() {
-  callActive = false;
-  stopSpeech();
-  if (recognition) { try { recognition.stop(); } catch(e) {} }
-  document.getElementById('call-screen').classList.add('hidden');
-  document.getElementById('app').classList.remove('hidden');
-  if (document.getElementById('messages').children.length === 0) {
-    setTimeout(() => addMessage(openingMessages[currentMood], 'her'), 400);
+// ── Chat Screen ──────────────────────────────────────
+function addMessage(text, who) {
+  const messages = document.getElementById("messages");
+  const wrap = document.createElement("div");
+  wrap.className = `bubble-wrap ${who}`;
+  const time = formatTime();
+  if (who === "her") {
+    wrap.innerHTML = `<div class="bubble-avatar"><div class="bubble-avatar-placeholder">I</div></div><div><div class="bubble her">${escapeHtml(text)}</div><span class="bubble-time">${time}</span></div>`;
+  } else {
+    wrap.innerHTML = `<div><div class="bubble me">${escapeHtml(text)}</div><span class="bubble-time">${time}</span></div>`;
+  }
+  messages.appendChild(wrap);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function showTyping() {
+  const messages = document.getElementById("messages");
+  const el = document.createElement("div");
+  el.className = "bubble-wrap her";
+  el.id = "typing-indicator";
+  el.innerHTML = `<div class="bubble-avatar"><div class="bubble-avatar-placeholder">I</div></div><div class="bubble her typing-dots"><span></span><span></span><span></span></div>`;
+  messages.appendChild(el);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function hideTyping() {
+  const el = document.getElementById("typing-indicator");
+  if (el) el.remove();
+}
+
+async function sendMessage() {
+  const input = document.getElementById("text-input");
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = "";
+  autoResize(input);
+  addMessage(text, "me");
+  hideQuickReplies();
+  showTyping();
+  const reply = await kindroidChat(text);
+  hideTyping();
+  addMessage(reply, "her");
+  speak(reply);
+}
+
+function sendQuick(text) {
+  addMessage(text, "me");
+  hideQuickReplies();
+  showTyping();
+  kindroidChat(text).then((reply) => {
+    hideTyping();
+    addMessage(reply, "her");
+    speak(reply);
+  });
+}
+
+function hideQuickReplies() {
+  document.getElementById("quick-replies").classList.add("hidden");
+}
+
+function handleKey(event) {
+  if (event.key === "Enter" && !event.shiftKey) {
+    event.preventDefault();
+    sendMessage();
   }
 }
 
-function setCallStatus(text) {
-  document.getElementById('call-status-text').textContent = text;
+function autoResize(el) {
+  el.style.height = "auto";
+  el.style.height = Math.min(el.scrollHeight, 120) + "px";
 }
 
-function setCallMood(mood) {
-  currentMood = mood;
-  localStorage.setItem('irene_mood', mood);
-  document.querySelectorAll('.mood-pill').forEach(btn => btn.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+// ── Call Screen ──────────────────────────────────────
+function addCallMessage(who, text) {
+  callMessages.push({ who, text });
+  const transcript = document.getElementById("call-transcript");
+  const el = document.createElement("div");
+  el.className = `call-msg ${who}`;
+  el.textContent = text;
+  transcript.appendChild(el);
+  transcript.scrollTop = transcript.scrollHeight;
+  if (who === "her") speak(text);
 }
 
-function showCallBubble(text, speak) {
-  const bubble     = document.getElementById('call-bubble');
-  const bubbleText = document.getElementById('call-bubble-text');
-  bubbleText.textContent = text;
-  bubble.classList.remove('hidden');
-  bubble.classList.add('visible');
-  if (speak && speakerOn) speakText(text);
-  setTimeout(() => {
-    bubble.classList.remove('visible');
-    setTimeout(() => bubble.classList.add('hidden'), 600);
-  }, Math.max(4000, text.length * 60));
+async function sendCallText() {
+  const input = document.getElementById("call-text-input");
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = "";
+  addCallMessage("me", text);
+  const reply = await kindroidChat(text);
+  addCallMessage("her", reply);
 }
 
-// ── Web Speech — hold to talk ──────────────────
-function startListening(e) {
-  e.preventDefault();
-  const btn = document.getElementById('mic-btn');
-  btn.classList.add('listening');
-  document.getElementById('mic-wave').classList.remove('hidden');
-  setCallStatus('Listening… 🎙️');
+function handleCallKey(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    sendCallText();
+  }
+}
 
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SpeechRecognition) {
-    document.getElementById('call-type-row').style.opacity = '1';
-    document.getElementById('call-text-input').focus();
-    btn.classList.remove('listening');
-    document.getElementById('mic-wave').classList.add('hidden');
-    setCallStatus('Type below 👇');
+function startListening(event) {
+  if (event) event.preventDefault();
+  if (isListening) return;
+  recognition = initRecognition();
+  if (!recognition) {
+    addCallMessage("her", "Voice input isn't supported in this browser. Try typing instead.");
     return;
   }
-
-  recognition = new SpeechRecognition();
-  recognition.continuous    = false;
-  recognition.interimResults = false;
-  recognition.lang           = 'en-US';
-
-  recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    sendCallMessage(transcript);
+  const btn = document.getElementById("mic-btn");
+  btn.classList.add("active");
+  isListening = true;
+  recognition.onresult = (e) => {
+    const text = e.results[0][0].transcript;
+    addCallMessage("me", text);
+    kindroidChat(text).then((reply) => addCallMessage("her", reply));
   };
-  recognition.onerror = () => {
-    setCallStatus('Mic error — type below');
-    document.getElementById('call-type-row').style.opacity = '1';
-  };
+  recognition.onerror = () => {};
   recognition.onend = () => {
-    btn.classList.remove('listening');
-    document.getElementById('mic-wave').classList.add('hidden');
+    btn.classList.remove("active");
+    isListening = false;
   };
   recognition.start();
 }
 
-function stopListening(e) {
-  e.preventDefault();
-  document.getElementById('mic-btn').classList.remove('listening');
-  document.getElementById('mic-wave').classList.add('hidden');
-  if (recognition) { try { recognition.stop(); } catch(e) {} }
+function stopListening(event) {
+  if (event) event.preventDefault();
+  if (recognition && isListening) recognition.stop();
 }
 
-async function sendCallMessage(text) {
-  if (!text.trim()) return;
-  setCallStatus(`You: "${text.substring(0,30)}${text.length>30?'…':''}"`);
-  const reply = await fetchKindroid(text);
-  if (reply) {
-    showCallBubble(reply, true);
-    setCallStatus('Connected ❤️');
-  }
-}
-
-function handleCallKey(e) {
-  if (e.key === 'Enter') sendCallText();
-}
-
-function sendCallText() {
-  const input = document.getElementById('call-text-input');
-  const text  = input.value.trim();
-  if (!text) return;
-  input.value = '';
-  sendCallMessage(text);
-}
-
-// ── Speaker / TTS ──────────────────────────────
 function toggleSpeaker() {
   speakerOn = !speakerOn;
-  document.getElementById('speaker-btn').style.opacity = speakerOn ? '1' : '0.4';
-  if (!speakerOn) stopSpeech();
+  document.getElementById("speaker-btn").textContent = speakerOn ? "On" : "Off";
+  if (!speakerOn && window.speechSynthesis) window.speechSynthesis.cancel();
 }
 
-function speakText(text) {
-  if (!speakerOn || !window.speechSynthesis) return;
-  stopSpeech();
-  const clean = text.replace(/[💕🔥🌹😏🌸❤️😈✦]/g, '').trim();
-  const utt   = new SpeechSynthesisUtterance(clean);
-  utt.rate  = 0.92;
-  utt.pitch = 1.15;
-  utt.volume = 1;
-  const voices       = window.speechSynthesis.getVoices();
-  const femaleVoice  = voices.find(v =>
-    v.name.toLowerCase().includes('aria') ||
-    v.name.toLowerCase().includes('zira') ||
-    (v.lang === 'en-US' && v.name.toLowerCase().includes('google'))
-  ) || voices.find(v => v.lang.startsWith('en'));
-  if (femaleVoice) utt.voice = femaleVoice;
-  window.speechSynthesis.speak(utt);
+// ── Moods ────────────────────────────────────────────
+function setMood(newMood, btn) {
+  mood = newMood;
+  localStorage.setItem("irene_mood", newMood);
+  document.querySelectorAll("#mood-bar button").forEach((b) => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  document.getElementById("mood-bar").classList.remove("show");
 }
 
-function stopSpeech() {
-  if (window.speechSynthesis) window.speechSynthesis.cancel();
+function setCallMood(newMood, btn) {
+  mood = newMood;
+  localStorage.setItem("irene_mood", newMood);
+  document.querySelectorAll(".call-moods .mood-pill").forEach((b) => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
 }
 
-// ══════════════════════════════════════════════
-//  KINDROID API
-// ══════════════════════════════════════════════
-async function fetchKindroid(userText) {
-  try {
-    // Try multiple endpoints for compatibility
-    const endpoints = [
-      {
-        url: 'https://api.kindroid.ai/v1/send-message',
-        body: {
-          ai_id: kindroidAiId,
-          message: userText,
-          stream: false
-        }
-      },
-      {
-        url: 'https://api.kindroid.ai/v1/characters/' + kindroidAiId + '/chat',
-        body: {
-          character_code: kindroidAiId,
-          message: userText
-        }
-      },
-      {
-        url: 'https://api.kindroid.ai/v1/send-ai-message',
-        body: {
-          ai_id: kindroidAiId,
-          message: userText,
-          system_note: moodContext[currentMood] || moodContext.intimate
-        }
-      }
-    ];
-
-    for (const endpoint of endpoints) {
-      try {
-        const res = await fetch(endpoint.url, {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${kindroidKey}`,
-            'Content-Type':  'application/json'
-          },
-          body: JSON.stringify(endpoint.body)
-        });
-        if (res.ok) {
-          const data = await res.json();
-          return data.message || data.response || data.text || data.content || null;
-        }
-      } catch (e) {
-        console.log('Endpoint failed:', endpoint.url, e);
-        continue;
-      }
-    }
-    
-    return "Something went wrong, try again baby 💕";
-  } catch (e) {
-    console.error('Kindroid error:', e);
-    return "Connection dropped for a second… come back? 💕";
-  }
+function toggleMood() {
+  document.getElementById("mood-bar").classList.toggle("show");
 }
 
-// ══════════════════════════════════════════════
-//  CHAT
-// ══════════════════════════════════════════════
-async function getIreneResponse(userText) {
-  showTyping();
-  const reply = await fetchKindroid(userText);
-  hideTyping();
-  if (reply) addMessage(reply, 'her');
-}
-
-function sendMessage() {
-  const input = document.getElementById('user-input');
-  const text  = input.value.trim();
-  if (!text) return;
-  input.value = ''; input.style.height = 'auto';
-  addMessage(text, 'me');
-  hideQuickReplies();
-  getIreneResponse(text);
-}
-
-function sendQuick(text) {
-  addMessage(text, 'me');
-  hideQuickReplies();
-  getIreneResponse(text);
-}
-
-function handleKey(e) {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-}
-
-function autoResize(el) {
-  el.style.height = 'auto';
-  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
-}
-
-function addMessage(text, sender) {
-  const messages = document.getElementById('messages');
-  const wrap     = document.createElement('div');
-  wrap.className = `bubble-wrap ${sender}`;
-  const time     = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  wrap.innerHTML = sender === 'her'
-    ? `<div class="bubble-avatar"><video src="/irene_avatar.mp4" autoplay loop muted playsinline></video></div>
-       <div><div class="bubble her">${escapeHtml(text)}</div><span class="bubble-time">${time}</span></div>`
-    : `<div><div class="bubble me">${escapeHtml(text)}</div><span class="bubble-time">${time}</span></div>`;
-  messages.appendChild(wrap);
-  scrollToBottom();
-}
-
-function showTyping() {
-  const messages = document.getElementById('messages');
-  const el = document.createElement('div');
-  el.className = 'bubble-wrap her'; el.id = 'typing-indicator';
-  el.innerHTML = `<div class="bubble-avatar"><video src="/irene_avatar.mp4" autoplay loop muted playsinline></video></div>
-    <div class="bubble her typing-dots"><span></span><span></span><span></span></div>`;
-  messages.appendChild(el);
-  scrollToBottom();
-}
-
-function hideTyping() {
-  const el = document.getElementById('typing-indicator');
-  if (el) el.remove();
-}
-
-function scrollToBottom() {
-  document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
-}
-
-function escapeHtml(t) {
-  return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
-}
-
-function hideQuickReplies() {
-  document.getElementById('quick-replies').style.opacity = '0.4';
-}
-
-// ── Mood ────────────────────────────────────────
-function toggleMood() { document.getElementById('mood-bar').classList.toggle('hidden'); }
-function setMood(mood) {
-  currentMood = mood;
-  localStorage.setItem('irene_mood', mood);
-  document.getElementById('mood-bar').classList.add('hidden');
-  document.getElementById('quick-replies').style.opacity = '1';
-  const acks = {
-    sweet:'Aww sweet mode 💕', playful:'Playful mode 😏 you asked for it!',
-    romantic:'Romantic… my favorite 🌹', intimate:'Oh it\'s THAT kind of night 🔥'
-  };
-  addMessage(acks[mood], 'her');
-}
-
-// ── Settings ────────────────────────────────────
+// ── Settings ─────────────────────────────────────────
 function openSettings() {
-  document.getElementById('s-partner-name').value = partnerName;
-  document.getElementById('s-user-name').value    = userName;
-  document.getElementById('s-mood').value         = currentMood;
-  document.getElementById('s-ai-id').value        = kindroidAiId;
-  document.getElementById('s-api-key').value      = kindroidKey ? '••••••••' : '';
-  openPanel('settings-panel');
+  document.getElementById("set-username").value = username;
+  document.getElementById("set-partnername").value = partnerName;
+  document.getElementById("set-kindroid-key").value = kindroidKey;
+  document.getElementById("set-ai-id").value = aiId;
+  document.getElementById("settings-panel").classList.remove("hidden");
+  document.getElementById("overlay").classList.remove("hidden");
 }
 
 function saveSettings() {
-  partnerName  = document.getElementById('s-partner-name').value.trim() || 'Irene';
-  userName     = document.getElementById('s-user-name').value.trim()    || 'baby';
-  currentMood  = document.getElementById('s-mood').value;
-  const newId  = document.getElementById('s-ai-id').value.trim();
-  const newKey = document.getElementById('s-api-key').value;
-  if (newId)  kindroidAiId = newId;
-  if (newKey && !newKey.startsWith('•')) kindroidKey = newKey;
-  localStorage.setItem('irene_partnername', partnerName);
-  localStorage.setItem('irene_username',    userName);
-  localStorage.setItem('irene_mood',        currentMood);
-  localStorage.setItem('irene_ai_id',       kindroidAiId);
-  if (kindroidKey) localStorage.setItem('irene_kindroid_key', kindroidKey);
-  closePanel('settings-panel');
-  addMessage(`Got it baby 💕 I'm ${partnerName}, you're ${userName}.`, 'her');
-  document.getElementById('display-name').textContent = partnerName;
+  username = document.getElementById("set-username").value.trim() || "baby";
+  partnerName = document.getElementById("set-partnername").value.trim() || "Irene";
+  kindroidKey = document.getElementById("set-kindroid-key").value.trim() || DEFAULT_KEY;
+  aiId = document.getElementById("set-ai-id").value.trim() || DEFAULT_AI_ID;
+  localStorage.setItem("irene_username", username);
+  localStorage.setItem("irene_partnername", partnerName);
+  localStorage.setItem("irene_kindroid_key", kindroidKey);
+  localStorage.setItem("irene_ai_id", aiId);
+  closeAllPanels();
 }
 
-// ── Panels ──────────────────────────────────────
-function openPanel(id) {
-  document.getElementById(id).classList.remove('hidden');
-  document.getElementById('overlay').classList.remove('hidden');
-}
 function closePanel(id) {
-  document.getElementById(id).classList.add('hidden');
-  document.getElementById('overlay').classList.add('hidden');
-}
-function closeAllPanels() {
-  ['settings-panel'].forEach(id => document.getElementById(id).classList.add('hidden'));
-  document.getElementById('overlay').classList.add('hidden');
+  document.getElementById(id).classList.add("hidden");
+  document.getElementById("overlay").classList.add("hidden");
 }
 
-// Load voices async (browser requirement)
+function closeAllPanels() {
+  document.getElementById("settings-panel").classList.add("hidden");
+  document.getElementById("overlay").classList.add("hidden");
+}
+
+// ── Init ─────────────────────────────────────────────
 if (window.speechSynthesis) {
   window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 }
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js").catch(() => {});
+}
 
-// Expose functions to inline HTML handlers (required for type="module" scripts)
 window.enterApp = enterApp;
-window.switchToChat = switchToChat;
 window.setCallMood = setCallMood;
 window.toggleSpeaker = toggleSpeaker;
 window.startListening = startListening;
