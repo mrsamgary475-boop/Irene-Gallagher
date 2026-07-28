@@ -306,7 +306,7 @@ function addMessage(text, sender) {
   wrap.className = `bubble-wrap ${sender}`;
   const time     = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   wrap.innerHTML = sender === 'her'
-    ? `<div class="bubble-avatar"><video src="irene_avatar.mp4" autoplay loop muted playsinline></video></div>
+    ? `<div class="bubble-avatar"><video src="/irene_avatar.mp4" autoplay loop muted playsinline></video></div>
        <div><div class="bubble her">${escapeHtml(text)}</div><span class="bubble-time">${time}</span></div>`
     : `<div><div class="bubble me">${escapeHtml(text)}</div><span class="bubble-time">${time}</span></div>`;
   messages.appendChild(wrap);
@@ -317,7 +317,7 @@ function showTyping() {
   const messages = document.getElementById('messages');
   const el = document.createElement('div');
   el.className = 'bubble-wrap her'; el.id = 'typing-indicator';
-  el.innerHTML = `<div class="bubble-avatar"><video src="irene_avatar.mp4" autoplay loop muted playsinline></video></div>
+  el.innerHTML = `<div class="bubble-avatar"><video src="/irene_avatar.mp4" autoplay loop muted playsinline></video></div>
     <div class="bubble her typing-dots"><span></span><span></span><span></span></div>`;
   messages.appendChild(el);
   scrollToBottom();
@@ -400,3 +400,24 @@ function closeAllPanels() {
 if (window.speechSynthesis) {
   window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 }
+
+// Expose functions to inline HTML handlers (required for type="module" scripts)
+window.enterApp = enterApp;
+window.switchToChat = switchToChat;
+window.setCallMood = setCallMood;
+window.toggleSpeaker = toggleSpeaker;
+window.startListening = startListening;
+window.stopListening = stopListening;
+window.endCall = endCall;
+window.handleCallKey = handleCallKey;
+window.sendCallText = sendCallText;
+window.setMood = setMood;
+window.toggleMood = toggleMood;
+window.openSettings = openSettings;
+window.saveSettings = saveSettings;
+window.closePanel = closePanel;
+window.closeAllPanels = closeAllPanels;
+window.sendQuick = sendQuick;
+window.sendMessage = sendMessage;
+window.handleKey = handleKey;
+window.autoResize = autoResize;
