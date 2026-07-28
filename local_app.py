@@ -11,7 +11,6 @@ import os
 import socketserver
 import urllib.request
 import urllib.error
-import random
 
 PORT = 8765
 WEB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "web")
@@ -20,27 +19,15 @@ KINDROID_API_URL = "https://api.kindroid.ai/v1/send-message"
 DEFAULT_API_KEY = os.environ.get("KINDROID_API_KEY", "kn_9686bcf1-b1dd-424c-b02b-c06e1441449c")
 DEFAULT_AI_ID = os.environ.get("KINDROID_AI_ID", "RwTcLQXQ3rMerS7qkZUC")
 
-FALLBACK_REPLIES = {
-    "sweet": ["You always know how to make me smile.", "I love talking with you, baby. Tell me more.", "You're the sweetest thing in my world."],
-    "playful": ["Oh? Is that so? Prove it.", "You're cute when you're trying to flirt.", "Keep talking like that and I might just blush."],
-    "romantic": ["Every word from you feels like a love letter.", "I could get lost in this conversation with you.", "You make my heart skip, you know that?"],
-    "intimate": ["Mmm... keep going.", "You know exactly what to say to me, don't you?", "I've been thinking about you all day."],
-}
-
-MOOD_PROMPTS = {
-    "sweet": "Be warm, loving, and affectionate. Use sweet pet names.",
-    "playful": "Be playful, teasing, and flirtatious.",
-    "romantic": "Be deeply romantic, poetic, and sensual.",
-    "intimate": "Be bold, seductive, and uninhibited. Adults in a committed relationship.",
-}
-
 
 class IreneHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=WEB_DIR, **kwargs)
 
     def do_GET(self):
-        if self.path in ("/", "/index.html", "/video", "/video/"):
+        if self.path == "/video" or self.path == "/video/":
+            self.path = "/video.html"
+        elif self.path == "/" or self.path == "/index.html":
             self.path = "/video.html"
         return super().do_GET()
 
@@ -51,12 +38,12 @@ class IreneHandler(http.server.SimpleHTTPRequestHandler):
             self.send_error(404, "Not Found")
 
     def _handle_chat(self):
-        length = int(self.headers.get("Content-Length", 0))
-        raw = self.rfile.read(length).decode("utf-8") if length else "{}"
+        content_length = int(self.headers.get("Content-Length", 0))
+        body = self.rfile.read(content_length).decode("utf-8") if content_length else "{}"
         try:
-            data = json.loads(raw)
+            data = json.loads(body)
         except json.JSONDecodeError:
-            self._json(400, {"error": "Invalid JSON"})
+            self._send_json(400, {"error": "Invalid JSON"})
             return
 
         message = data.get("message", "").strip()
@@ -67,35 +54,67 @@ class IreneHandler(http.server.SimpleHTTPRequestHandler):
         ai_id = data.get("aiId", DEFAULT_AI_ID)
 
         if not message:
-            self._json(400, {"error": "Message is required"})
+            self._send_json(400, {"error": "Message is required"})
             return
 
-        sys_prompt = (
-            f"{MOOD_PROMPTS.get(mood, MOOD_PROMPTS['intimate'])} "
+        mood_prompts = {
+            "sweet": "Be warm, loving, and affectionate. Use sweet pet names.",
+            "playful": "Be playful, teasing, and flirtatious.",
+            "romantic": "Be deeply romantic, poetic, and sensual.",
+            "intimate": "Be bold, seductive, and uninhibited. Adults in a committed relationship.",
+        }
+
+        system_prompt = (
+            f"{mood_prompts.get(mood, mood_prompts['intimate'])} "
             f"You are {partner_name}. The user is {username}. "
             f"Keep replies concise (1-3 sentences). Stay in character."
         )
 
-        payload = json.dumps({"ai_id": ai_id, "message": message, "system_prompt": sys_prompt}).encode("utf-8")
+        payload = json.dumps({
+            "ai_id": ai_id,
+            "message": message,
+            "system_prompt": system_prompt,
+        }).encode("utf-8")
+
         req = urllib.request.Request(
-            KINDROID_API_URL, data=payload,
-            headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
+            KINDROID_API_URL,
+            data=payload,
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {api_key}",
+            },
             method="POST",
         )
 
         try:
             with urllib.request.urlopen(req, timeout=30) as resp:
-                rdata = json.loads(resp.read().decode("utf-8"))
-                reply = rdata.get("reply") or rdata.get("response") or rdata.get("message") or "Hmm, I didn't catch that."
-                self._json(200, {"reply": reply})
+                resp_data = json.loads(resp.read().decode("utf-8"))
+                reply = resp_data.get("reply") or resp_data.get("response") or resp_data.get("message") or "Hmm, I didn't catch that."
+                self._send_json(200, {"reply": reply})
         except urllib.error.HTTPError as e:
-            print(f"Kindroid API error {e.code}")
-            self._json(200, {"reply": random.choice(FALLBACK_REPLIES.get(mood, FALLBACK_REPLIES["intimate"]))})
+            error_body = ""
+            try:
+                error_body = e.read().decode("utf-8", errors="replace")
+            except Exception:
+                pass
+            print(f"Kindroid API error {e.code}: {error_body}")
+            self._send_json(200, {"reply": self._fallback_reply(mood)})
         except Exception as e:
             print(f"Kindroid fetch failed: {e}")
-            self._json(200, {"reply": random.choice(FALLBACK_REPLIES.get(mood, FALLBACK_REPLIES["intimate"]))})
+            self._send_json(200, {"reply": self._fallback_reply(mood)})
 
-    def _json(self, code, data):
+    def _fallback_reply(self, mood):
+        replies = {
+            "sweet": ["You always know how to make me smile.", "I love talking with you, baby. Tell me more.", "You're the sweetest thing in my world."],
+            "playful": ["Oh? Is that so? Prove it.", "You're cute when you're trying to flirt.", "Keep talking like that and I might just blush."],
+            "romantic": ["Every word from you feels like a love letter.", "I could get lost in this conversation with you.", "You make my heart skip, you know that?"],
+            "intimate": ["Mmm... keep going.", "You know exactly what to say to me, don't you?", "I've been thinking about you all day."],
+        }
+        import random
+        pool = replies.get(mood, replies["intimate"])
+        return random.choice(pool)
+
+    def _send_json(self, code, data):
         body = json.dumps(data).encode("utf-8")
         self.send_response(code)
         self.send_header("Content-Type", "application/json")
@@ -113,13 +132,13 @@ class IreneHandler(http.server.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
 
-    def log_message(self, *args):
+    def log_message(self, format, *args):
         pass
 
 
 def main():
-    print(f"Irene AI Companion - http://localhost:{PORT}/video")
-    print("Press Ctrl+C to stop.")
+    print(f"Irene AI Companion starting on http://localhost:{PORT}/video")
+    print(f"Press Ctrl+C to stop.")
     with socketserver.TCPServer(("", PORT), IreneHandler) as httpd:
         try:
             httpd.serve_forever()

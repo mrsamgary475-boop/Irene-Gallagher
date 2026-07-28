@@ -26,105 +26,99 @@ html, body {
 
 .hidden { display: none !important; }
 
-/* ── Video Screen ── */
+/* ── Video Avatar Screen ── */
 .video-screen {
   position: fixed; inset: 0; z-index: 10;
   display: flex; flex-direction: column;
   animation: fadeIn 0.6s ease;
 }
+
 .video-bg {
   position: absolute; inset: 0;
   background: radial-gradient(ellipse at 50% 35%, #2a1a28 0%, #0a0a0f 70%);
 }
 
-/* ── Avatar Stage ── */
+/* ── Animated Avatar ── */
 .avatar-stage {
   position: relative; z-index: 1;
   flex: 1;
   display: flex; align-items: center; justify-content: center;
-  min-height: 240px;
+  min-height: 200px;
 }
 
 .avatar-aura {
   position: absolute;
-  width: 340px; height: 340px;
+  width: 320px; height: 320px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(232, 117, 138, 0.12) 0%, transparent 65%);
   animation: auraBreath 4s ease-in-out infinite;
+}
+
+.avatar-orb {
+  position: relative;
+  width: 180px; height: 180px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.orb-inner {
+  position: relative;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3a2230, #1a1a2a);
+  border: 2px solid rgba(232, 117, 138, 0.3);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
   transition: all 0.4s ease;
 }
 
-.avatar-frame {
-  position: relative;
-  width: 200px; height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid rgba(232, 117, 138, 0.3);
-  box-shadow: 0 0 40px rgba(232, 117, 138, 0.15);
-  transition: all 0.4s ease;
+.orb-core {
+  font-family: "Playfair Display", serif;
+  font-size: 64px; font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 0 0 20px rgba(232, 117, 138, 0.4);
   z-index: 2;
 }
 
-.avatar-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: filter 0.4s ease, transform 0.4s ease;
-}
-
-.avatar-overlay {
+.orb-pulse {
   position: absolute; inset: 0;
   border-radius: 50%;
-  pointer-events: none;
-  transition: all 0.4s ease;
+  border: 2px solid rgba(232, 117, 138, 0.4);
+  animation: orbPulse 2s ease-out infinite;
 }
-
-.avatar-ripple {
-  position: absolute; inset: 0;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  pointer-events: none;
-}
+.orb-pulse.delayed { animation-delay: 1s; }
 
 /* Avatar states */
-.avatar-frame.listening {
-  border-color: rgba(232, 117, 138, 0.7);
-  box-shadow: 0 0 50px rgba(232, 117, 138, 0.35);
-  transform: scale(1.03);
+.avatar-orb.listening .orb-inner {
+  background: linear-gradient(135deg, #4a2840, #2a1a30);
+  border-color: rgba(232, 117, 138, 0.6);
+  box-shadow: 0 0 40px rgba(232, 117, 138, 0.3);
+  transform: scale(1.05);
 }
-.avatar-frame.listening .avatar-img { filter: brightness(1.1); }
-.avatar-frame.listening .avatar-ripple {
+.avatar-orb.listening .orb-core { animation: coreGlow 1s ease-in-out infinite; }
+
+.avatar-orb.speaking .orb-inner {
+  background: linear-gradient(135deg, #4a2a38, #2a1a28);
   border-color: rgba(232, 117, 138, 0.5);
-  animation: ripple 1.5s ease-out infinite;
+  box-shadow: 0 0 30px rgba(232, 117, 138, 0.25);
+  animation: orbBounce 0.5s ease-in-out infinite;
 }
 
-.avatar-frame.speaking {
-  border-color: rgba(232, 117, 138, 0.5);
-  box-shadow: 0 0 40px rgba(232, 117, 138, 0.25);
-  animation: speakBounce 0.6s ease-in-out infinite;
-}
-.avatar-frame.speaking .avatar-overlay {
-  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(232, 117, 138, 0.08) 100%);
-}
-
-.avatar-frame.thinking {
+.avatar-orb.thinking .orb-inner {
+  background: linear-gradient(135deg, #3a2238, #1a1a2a);
   border-color: rgba(232, 117, 138, 0.4);
 }
-.avatar-frame.thinking .avatar-img {
-  filter: brightness(0.85) blur(0.5px);
-  animation: thinkPulse 1.2s ease-in-out infinite;
-}
+.avatar-orb.thinking .orb-core { animation: corePulse 0.8s ease-in-out infinite; }
 
-/* Rings */
-.avatar-ring {
+/* Orbital rings */
+.orb-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(232, 117, 138, 0.12);
+  border: 1px solid rgba(232, 117, 138, 0.15);
   pointer-events: none;
 }
-.ring-1 { width: 240px; height: 240px; animation: ringSpin 20s linear infinite; }
-.ring-2 { width: 290px; height: 290px; animation: ringSpin 30s linear infinite reverse; }
-.ring-3 { width: 340px; height: 340px; animation: ringSpin 40s linear infinite; }
+.ring-1 { width: 180px; height: 180px; animation: ringSpin 20s linear infinite; }
+.ring-2 { width: 220px; height: 220px; animation: ringSpin 30s linear infinite reverse; }
+.ring-3 { width: 260px; height: 260px; animation: ringSpin 40s linear infinite; }
 
 /* ── Header ── */
 .video-header {
@@ -175,12 +169,15 @@ html, body {
   flex: 1; overflow-y: auto;
   display: flex; flex-direction: column; gap: 8px;
   padding: 8px 16px;
-  max-height: 25vh; min-height: 60px;
+  max-height: 25vh;
+  min-height: 60px;
 }
 .video-transcript:empty::after {
   content: "Your conversation will appear here";
-  color: var(--text-muted); font-size: 13px;
-  text-align: center; padding: 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+  padding: 20px;
 }
 .transcript-msg {
   max-width: 80%; padding: 10px 16px;
@@ -190,7 +187,8 @@ html, body {
 .transcript-msg.me {
   align-self: flex-end;
   background: linear-gradient(135deg, var(--primary), var(--primary-dim));
-  color: white; border-bottom-right-radius: 4px;
+  color: white;
+  border-bottom-right-radius: 4px;
 }
 .transcript-msg.her {
   align-self: flex-start;
@@ -201,19 +199,20 @@ html, body {
 }
 .transcript-msg.her::before {
   content: "Irene: ";
-  font-weight: 600; color: var(--accent);
+  font-weight: 600;
+  color: var(--accent);
 }
 
 /* ── Controls ── */
 .video-controls {
   position: relative; z-index: 2;
-  display: flex; justify-content: center; gap: 16px;
+  display: flex; justify-content: center; gap: 20px;
   padding: 12px 16px;
 }
 .ctrl-btn {
-  height: 52px; min-width: 52px; padding: 0 18px;
-  border-radius: 26px; border: none;
-  font-family: inherit; font-size: 13px; font-weight: 600;
+  height: 56px; min-width: 56px; padding: 0 20px;
+  border-radius: 28px; border: none;
+  font-family: inherit; font-size: 14px; font-weight: 600;
   cursor: pointer; transition: all var(--transition);
   display: flex; align-items: center; justify-content: center;
   background: rgba(255, 255, 255, 0.12);
@@ -300,19 +299,22 @@ html, body {
 @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes slideUpPanel { from { transform: translateY(100%); } to { transform: translateY(0); } }
 @keyframes auraBreath { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.1); opacity: 1; } }
-@keyframes ripple { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.3); opacity: 0; } }
-@keyframes speakBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
-@keyframes thinkPulse { 0%, 100% { filter: brightness(0.85) blur(0.5px); } 50% { filter: brightness(0.95) blur(0px); } }
+@keyframes orbPulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.4); opacity: 0; } }
+@keyframes orbBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+@keyframes coreGlow { 0%, 100% { text-shadow: 0 0 20px rgba(232, 117, 138, 0.4); } 50% { text-shadow: 0 0 35px rgba(232, 117, 138, 0.7); } }
+@keyframes corePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 @keyframes ringSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes micPulse { 0%, 100% { box-shadow: 0 0 20px rgba(232, 117, 138, 0.4); } 50% { box-shadow: 0 0 35px rgba(232, 117, 138, 0.7); } }
 
 /* ── Responsive ── */
 @media (min-width: 768px) {
-  .avatar-frame { width: 240px; height: 240px; }
-  .ring-1 { width: 280px; height: 280px; }
-  .ring-2 { width: 340px; height: 340px; }
-  .ring-3 { width: 400px; height: 400px; }
-  .avatar-aura { width: 420px; height: 420px; }
+  .avatar-orb { width: 220px; height: 220px; }
+  .orb-inner { width: 170px; height: 170px; }
+  .orb-core { font-size: 80px; }
+  .ring-1 { width: 220px; height: 220px; }
+  .ring-2 { width: 270px; height: 270px; }
+  .ring-3 { width: 320px; height: 320px; }
+  .avatar-aura { width: 400px; height: 400px; }
   .video-name { font-size: 32px; }
   .transcript-msg { max-width: 60%; }
 }

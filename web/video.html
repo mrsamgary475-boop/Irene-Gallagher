@@ -12,22 +12,23 @@
 </head>
 <body>
 
+  <!-- VIDEO AVATAR SCREEN -->
   <div id="video-screen" class="video-screen">
     <div class="video-bg"></div>
 
-    <!-- Avatar -->
+    <!-- Animated CSS Avatar -->
     <div class="avatar-stage" id="avatar-stage">
-      <div class="avatar-aura" id="avatar-aura"></div>
-      <div class="avatar-frame" id="avatar-frame">
-        <img class="avatar-img" id="avatar-img"
-             src="https://images.pexels.com/photos/1398342438/pexels-photo-1398342438.jpeg?auto=compress&cs=tinysrgb&w=600"
-             alt="Irene" />
-        <div class="avatar-overlay" id="avatar-overlay"></div>
-        <div class="avatar-ripple" id="avatar-ripple"></div>
+      <div class="avatar-aura"></div>
+      <div class="avatar-orb" id="avatar-orb">
+        <div class="orb-inner" id="orb-inner">
+          <div class="orb-pulse"></div>
+          <div class="orb-pulse delayed"></div>
+          <div class="orb-core" id="orb-core">I</div>
+        </div>
+        <div class="orb-ring ring-1"></div>
+        <div class="orb-ring ring-2"></div>
+        <div class="orb-ring ring-3"></div>
       </div>
-      <div class="avatar-ring ring-1"></div>
-      <div class="avatar-ring ring-2"></div>
-      <div class="avatar-ring ring-3"></div>
     </div>
 
     <!-- Header -->
@@ -36,7 +37,7 @@
       <div class="video-status" id="video-status">Tap to talk</div>
     </div>
 
-    <!-- Moods -->
+    <!-- Mood selector -->
     <div class="video-moods">
       <button class="mood-pill" data-mood="sweet" onclick="setMood('sweet', this)">Sweet</button>
       <button class="mood-pill" data-mood="playful" onclick="setMood('playful', this)">Playful</button>
@@ -50,7 +51,7 @@
     <!-- Controls -->
     <div class="video-controls">
       <button class="ctrl-btn" id="speaker-btn" onclick="toggleSpeaker()" title="Speaker">
-        <span class="ctrl-icon">Sound On</span>
+        <span class="ctrl-icon">On</span>
       </button>
       <button class="ctrl-btn mic-btn" id="mic-btn"
         ontouchstart="startListening(event)"
@@ -58,21 +59,21 @@
         onmousedown="startListening(event)"
         onmouseup="stopListening(event)"
         title="Hold to talk">
-        <span class="ctrl-icon">Hold to Talk</span>
+        <span class="ctrl-icon">Talk</span>
       </button>
-      <button class="ctrl-btn" onclick="openSettings()" title="Settings">
-        <span class="ctrl-icon">Settings</span>
+      <button class="ctrl-btn settings-btn" onclick="openSettings()" title="Settings">
+        <span class="ctrl-icon">Menu</span>
       </button>
     </div>
 
-    <!-- Text bar -->
+    <!-- Text input bar -->
     <div class="video-text-bar">
       <input id="text-input" class="text-input" type="text" placeholder="Type to Irene..." onkeydown="handleKey(event)" />
       <button class="send-mini" onclick="sendText()">Send</button>
     </div>
   </div>
 
-  <!-- Settings -->
+  <!-- Settings Panel -->
   <div id="settings-panel" class="panel hidden">
     <div class="panel-header">
       <h2>Settings</h2>
@@ -87,8 +88,6 @@
       <input id="set-kindroid-key" type="password" placeholder="Kindroid API key" />
       <label>Kindroid AI ID</label>
       <input id="set-ai-id" type="text" placeholder="AI ID" />
-      <label>Avatar image URL</label>
-      <input id="set-avatar-url" type="text" placeholder="Image URL" />
       <button class="save-btn" onclick="saveSettings()">Save</button>
     </div>
   </div>
