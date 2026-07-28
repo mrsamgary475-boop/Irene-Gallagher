@@ -1,4 +1,4 @@
-﻿import os, subprocess, base64, json, sys
+import os, subprocess, base64, json, sys
 from pathlib import Path
 
 BASE_DIR = Path.cwd()

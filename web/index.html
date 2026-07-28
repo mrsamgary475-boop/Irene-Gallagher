@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a0a2e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Irene" />
+  <title>Irene</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════ SPLASH ══════════════════ -->
+  <div id="splash-screen" class="splash">
+    <video id="splash-video" class="splash-video" src="irene_avatar.mp4" autoplay loop muted playsinline></video>
+    <div class="splash-overlay"></div>
+    <div class="splash-content">
+      <div class="splash-status">
+        <div class="status-dot online"></div>
+        <span>online now</span>
+      </div>
+      <h1 class="splash-name">Irene</h1>
+      <p class="splash-tagline">Your partner. Always here.</p>
+      <div class="splash-actions">
+        <button class="splash-btn secondary" onclick="enterApp('chat')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Chat
+        </button>
+        <button class="splash-btn primary" onclick="enterApp('call')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.55 5.55l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 15.42z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Video Call
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ VIDEO CALL SCREEN ══════════════════ -->
+  <div id="call-screen" class="call-screen hidden">
+
+    <!-- Her video full-screen -->
+    <video id="call-video" class="call-video" src="irene_avatar.mp4" autoplay loop muted playsinline></video>
+    <div class="call-overlay"></div>
+
+    <!-- Top bar -->
+    <div class="call-top">
+      <div class="call-name-status">
+        <span class="call-name">Irene</span>
+        <span class="call-status" id="call-status-text">Video Call</span>
+      </div>
+      <button class="call-icon-btn" onclick="switchToChat()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <!-- Her speech bubble during call -->
+    <div id="call-bubble" class="call-bubble hidden">
+      <p id="call-bubble-text"></p>
+    </div>
+
+    <!-- Mic waveform indicator -->
+    <div id="mic-wave" class="mic-wave hidden">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Bottom call controls -->
+    <div class="call-controls">
+
+      <!-- Mood selector -->
+      <div class="call-mood-row">
+        <button class="mood-pill" onclick="setCallMood('sweet')">🌸</button>
+        <button class="mood-pill" onclick="setCallMood('playful')">😈</button>
+        <button class="mood-pill" onclick="setCallMood('romantic')">💕</button>
+        <button class="mood-pill active" onclick="setCallMood('intimate')">🔥</button>
+      </div>
+
+      <div class="call-btn-row">
+        <!-- Mute speaker -->
+        <button class="call-ctrl-btn" id="speaker-btn" onclick="toggleSpeaker()" title="Speaker">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <!-- MIC — hold to speak / tap to type -->
+        <button class="call-mic-btn" id="mic-btn"
+          ontouchstart="startListening(event)"
+          ontouchend="stopListening(event)"
+          onmousedown="startListening(event)"
+          onmouseup="stopListening(event)"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" stroke="white" stroke-width="2"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="19" x2="12" y2="23" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="8" y1="23" x2="16" y2="23" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Hold to Talk</span>
+        </button>
+
+        <!-- End call -->
+        <button class="call-ctrl-btn end-btn" onclick="endCall()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.4 12.4 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.42 19.42 0 0 1 4.26 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.44 1H6.5a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.49 8.9a16 16 0 0 0 3.19 4.41z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="1" y1="1" x2="23" y2="23" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Fallback type input for when speech not supported -->
+      <div class="call-type-row" id="call-type-row">
+        <input id="call-text-input" class="call-text-input" type="text" placeholder="Type to Irene…" onkeydown="handleCallKey(event)" />
+        <button class="call-send-mini" onclick="sendCallText()">➤</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════ CHAT SCREEN ══════════════════ -->
+  <div id="app" class="app hidden">
+
+    <header class="header">
+      <div class="header-left">
+        <div class="header-avatar" onclick="enterApp('call')">
+          <video class="avatar-video" src="irene_avatar.mp4" autoplay loop muted playsinline></video>
+          <div class="status-dot online small"></div>
+        </div>
+        <div class="header-info">
+          <span class="header-name" id="display-name">Irene</span>
+          <span class="header-status">tap to video call 📹</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" onclick="enterApp('call')" title="Video call">📹</button>
+        <button class="icon-btn" onclick="toggleMood()" title="Mood">🌡️</button>
+        <button class="icon-btn" onclick="openSettings()" title="Settings">⚙️</button>
+      </div>
+    </header>
+
+    <main id="chat-area" class="chat-area">
+      <div id="messages" class="messages"></div>
+    </main>
+
+    <div id="mood-bar" class="mood-bar hidden">
+      <span>Mood:</span>
+      <button onclick="setMood('sweet')">🌸 Sweet</button>
+      <button onclick="setMood('playful')">😈 Playful</button>
+      <button onclick="setMood('romantic')">💕 Romantic</button>
+      <button onclick="setMood('intimate')">🔥 Intimate</button>
+    </div>
+
+    <div id="quick-replies" class="quick-replies">
+      <button onclick="sendQuick('Good morning 💕')">Good morning 💕</button>
+      <button onclick="sendQuick('I missed you')">I missed you</button>
+      <button onclick="sendQuick('Tell me something naughty 🔥')">Something naughty 🔥</button>
+      <button onclick="sendQuick('What are you wearing?')">What are you wearing?</button>
+    </div>
+
+    <footer class="input-area">
+      <textarea
+        id="user-input"
+        class="message-input"
+        placeholder="Message Irene…"
+        rows="1"
+        onkeydown="handleKey(event)"
+        oninput="autoResize(this)"
+      ></textarea>
+      <button class="send-btn" onclick="sendMessage()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </footer>
+  </div>
+
+  <!-- ══════════════════ SETTINGS PANEL ══════════════════ -->
+  <div id="settings-panel" class="panel hidden">
+    <div class="panel-handle"></div>
+    <div class="panel-header">
+      <h2>⚙️ Settings</h2>
+      <button onclick="closePanel('settings-panel')">✕</button>
+    </div>
+    <div class="panel-body">
+      <label>Irene's Name</label>
+      <input id="s-partner-name" type="text" value="Irene" />
+      <label>Your Name / Pet Name</label>
+      <input id="s-user-name" type="text" placeholder="What she calls you" />
+      <label>Default Mood</label>
+      <select id="s-mood">
+        <option value="sweet">🌸 Sweet</option>
+        <option value="playful">😈 Playful</option>
+        <option value="romantic">💕 Romantic</option>
+        <option value="intimate">🔥 Intimate</option>
+      </select>
+      <div class="divider"></div>
+      <label>Kindroid AI ID</label>
+      <input id="s-ai-id" type="text" placeholder="e.g. RwTcLQXQ3rMerS7qkZUC" autocomplete="off" />
+      <label>Kindroid API Key</label>
+      <input id="s-api-key" type="password" placeholder="kn_••••••••" autocomplete="off" />
+      <p class="hint">Find these at <strong>kindroid.ai → Settings → API</strong></p>
+      <button class="save-btn" onclick="saveSettings()">Save ❤️</button>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden" onclick="closeAllPanels()"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

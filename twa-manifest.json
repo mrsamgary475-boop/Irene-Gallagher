@@ -1,0 +1,17 @@
+{
+  "packageId": "com.irene.app",
+  "host": "127.0.0.1:8765",
+  "name": "Irene",
+  "themeColor": "#1a0a2e",
+  "navigationColor": "#0d0515",
+  "backgroundColor": "#0d0515",
+  "enableNotifications": false,
+  "startUrl": "/",
+  "iconUrl": "icons/icon-512.png",
+  "maskableIconUrl": "icons/icon-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "android.keystore",
+    "alias": "irene"
+  }
+}

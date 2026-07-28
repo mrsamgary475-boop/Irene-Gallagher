@@ -242,7 +242,7 @@ async def index(request):
 
 
 async def manifest(request):
-    return web.FileResponse(WEB_DIR / "manifest.webmanifest")
+    return web.FileResponse(WEB_DIR / "manifest.json")
 
 
 async def service_worker(request):
@@ -392,6 +392,7 @@ async def create_app():
     app["kindroid"] = kindroid
     app["avatar"] = avatar
     app.router.add_get("/", index)
+    app.router.add_get("/manifest.json", manifest)
     app.router.add_get("/manifest.webmanifest", manifest)
     app.router.add_get("/sw.js", service_worker)
     app.router.add_get("/api/status", status)
