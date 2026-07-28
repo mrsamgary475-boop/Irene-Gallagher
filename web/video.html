@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <title>Irene - Video Avatar</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- VIDEO AVATAR SCREEN -->
+  <div id="video-screen" class="video-screen">
+    <div class="video-bg"></div>
+
+    <!-- Animated CSS Avatar -->
+    <div class="avatar-stage" id="avatar-stage">
+      <div class="avatar-aura"></div>
+      <div class="avatar-orb" id="avatar-orb">
+        <div class="orb-inner" id="orb-inner">
+          <div class="orb-pulse"></div>
+          <div class="orb-pulse delayed"></div>
+          <div class="orb-core" id="orb-core">I</div>
+        </div>
+        <div class="orb-ring ring-1"></div>
+        <div class="orb-ring ring-2"></div>
+        <div class="orb-ring ring-3"></div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="video-header">
+      <div class="video-name">Irene</div>
+      <div class="video-status" id="video-status">Tap to talk</div>
+    </div>
+
+    <!-- Mood selector -->
+    <div class="video-moods">
+      <button class="mood-pill" data-mood="sweet" onclick="setMood('sweet', this)">Sweet</button>
+      <button class="mood-pill" data-mood="playful" onclick="setMood('playful', this)">Playful</button>
+      <button class="mood-pill" data-mood="romantic" onclick="setMood('romantic', this)">Romantic</button>
+      <button class="mood-pill active" data-mood="intimate" onclick="setMood('intimate', this)">Intimate</button>
+    </div>
+
+    <!-- Transcript -->
+    <div class="video-transcript" id="video-transcript"></div>
+
+    <!-- Controls -->
+    <div class="video-controls">
+      <button class="ctrl-btn" id="speaker-btn" onclick="toggleSpeaker()" title="Speaker">
+        <span class="ctrl-icon">On</span>
+      </button>
+      <button class="ctrl-btn mic-btn" id="mic-btn"
+        ontouchstart="startListening(event)"
+        ontouchend="stopListening(event)"
+        onmousedown="startListening(event)"
+        onmouseup="stopListening(event)"
+        title="Hold to talk">
+        <span class="ctrl-icon">Talk</span>
+      </button>
+      <button class="ctrl-btn settings-btn" onclick="openSettings()" title="Settings">
+        <span class="ctrl-icon">Menu</span>
+      </button>
+    </div>
+
+    <!-- Text input bar -->
+    <div class="video-text-bar">
+      <input id="text-input" class="text-input" type="text" placeholder="Type to Irene..." onkeydown="handleKey(event)" />
+      <button class="send-mini" onclick="sendText()">Send</button>
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="settings-panel" class="panel hidden">
+    <div class="panel-header">
+      <h2>Settings</h2>
+      <button onclick="closePanel('settings-panel')">X</button>
+    </div>
+    <div class="panel-body">
+      <label>Your name</label>
+      <input id="set-username" type="text" placeholder="Your name" />
+      <label>Companion name</label>
+      <input id="set-partnername" type="text" placeholder="Irene" />
+      <label>Kindroid API Key</label>
+      <input id="set-kindroid-key" type="password" placeholder="Kindroid API key" />
+      <label>Kindroid AI ID</label>
+      <input id="set-ai-id" type="text" placeholder="AI ID" />
+      <button class="save-btn" onclick="saveSettings()">Save</button>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden" onclick="closeAllPanels()"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
