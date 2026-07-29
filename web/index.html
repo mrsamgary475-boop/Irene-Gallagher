@@ -4,104 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0a0f" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>Irene</title>
-  <link rel="manifest" href="/manifest.json" />
+  <title>Irene — Video Call</title>
   <link rel="stylesheet" href="/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div id="splash-screen" class="splash-screen">
-    <div class="splash-bg"></div>
-    <div class="splash-content">
-      <div class="splash-avatar-wrap">
-        <div class="splash-avatar-placeholder">I</div>
-        <div class="splash-glow"></div>
+
+  <!-- Full-screen video call -->
+  <div id="call" class="call">
+
+    <!-- Avatar fills entire screen -->
+    <div class="avatar-bg" id="avatar-bg">
+      <img class="avatar-img" id="avatar-img"
+           src="https://images.pexels.com/photos/4442079/pexels-photo-4442079.jpeg?auto=compress&cs=tinysrgb&w=1080"
+           alt="Irene" />
+      <div class="avatar-vignette"></div>
+      <div class="avatar-glow" id="avatar-glow"></div>
+    </div>
+
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="status-badge" id="status-badge">
+        <span class="status-dot"></span>
+        <span class="status-text" id="status-text">Connected</span>
       </div>
-      <h1 class="splash-title">Irene</h1>
-      <p class="splash-tagline">Your AI companion</p>
-      <div class="splash-buttons">
-        <button class="splash-btn secondary" onclick="enterApp('chat')">Chat</button>
-        <button class="splash-btn primary" onclick="enterApp('call')">Video Call</button>
-      </div>
+      <button class="top-btn" onclick="toggleFullscreen()" title="Fullscreen">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Name -->
+    <div class="caller-name">Irene</div>
+
+    <!-- Mood pills -->
+    <div class="mood-row">
+      <button class="mood-pill" data-mood="sweet" onclick="setMood('sweet',this)">Sweet</button>
+      <button class="mood-pill" data-mood="playful" onclick="setMood('playful',this)">Playful</button>
+      <button class="mood-pill" data-mood="romantic" onclick="setMood('romantic',this)">Romantic</button>
+      <button class="mood-pill active" data-mood="intimate" onclick="setMood('intimate',this)">Intimate</button>
+    </div>
+
+    <!-- Transcript -->
+    <div class="transcript" id="transcript"></div>
+
+    <!-- Bottom controls -->
+    <div class="bottom-bar">
+      <button class="ctrl" id="speaker-btn" onclick="toggleSpeaker()">
+        <svg class="ctrl-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+        </svg>
+        <span class="ctrl-label">Speaker</span>
+      </button>
+
+      <button class="ctrl mic-btn" id="mic-btn"
+        ontouchstart="startListening(event)"
+        ontouchend="stopListening(event)"
+        onmousedown="startListening(event)"
+        onmouseup="stopListening(event)">
+        <svg class="ctrl-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+          <line x1="12" y1="19" x2="12" y2="23" />
+          <line x1="8" y1="23" x2="16" y2="23" />
+        </svg>
+        <span class="ctrl-label">Hold to Talk</span>
+      </button>
+
+      <button class="ctrl end-btn" id="end-btn" onclick="endCall()">
+        <svg class="ctrl-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 15.46l-5.27-.61-2.52 2.52a15.05 15.05 0 0 1-6.59-6.59l2.53-2.53L8.54 3H3.03C2.45 13.18 10.82 21.55 21 20.97v-5.51z" />
+        </svg>
+        <span class="ctrl-label">End</span>
+      </button>
+    </div>
+
+    <!-- Text input -->
+    <div class="text-bar">
+      <input id="text-input" type="text" placeholder="Type to Irene..." onkeydown="handleKey(event)" />
+      <button class="send-btn" onclick="sendText()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+      </button>
     </div>
   </div>
 
-  <div id="call-screen" class="call-screen hidden">
-    <div class="call-bg"></div>
-    <div class="call-avatar-placeholder">I</div>
-    <div class="call-overlay">
-      <div class="call-header">
-        <div class="call-name">Irene</div>
-        <div class="call-status" id="call-status">Connected</div>
-      </div>
-      <div class="call-moods">
-        <button class="mood-pill" onclick="setCallMood('sweet', this)">Sweet</button>
-        <button class="mood-pill" onclick="setCallMood('playful', this)">Playful</button>
-        <button class="mood-pill" onclick="setCallMood('romantic', this)">Romantic</button>
-        <button class="mood-pill active" onclick="setCallMood('intimate', this)">Intimate</button>
-      </div>
-      <div class="call-transcript" id="call-transcript"></div>
-      <div class="call-controls">
-        <button class="call-ctrl-btn" id="speaker-btn" onclick="toggleSpeaker()" title="Speaker">On</button>
-        <button class="call-ctrl-btn mic-btn" id="mic-btn"
-          ontouchstart="startListening(event)"
-          ontouchend="stopListening(event)"
-          onmousedown="startListening(event)"
-          onmouseup="stopListening(event)"
-          title="Hold to talk">Talk</button>
-        <button class="call-ctrl-btn end-btn" onclick="endCall()" title="End call">End</button>
-      </div>
-      <div class="call-text-bar">
-        <input id="call-text-input" class="call-text-input" type="text" placeholder="Type to Irene..." onkeydown="handleCallKey(event)" />
-        <button class="call-send-mini" onclick="sendCallText()">Send</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="app" class="app hidden">
-    <div class="header">
-      <div class="header-avatar" onclick="enterApp('call')">
-        <div class="header-avatar-placeholder">I</div>
-      </div>
-      <div class="header-info">
-        <div class="header-name">Irene</div>
-        <div class="header-status">online</div>
-      </div>
-      <div class="header-actions">
-        <button class="icon-btn" onclick="enterApp('call')" title="Video call">Call</button>
-        <button class="icon-btn" onclick="toggleMood()" title="Mood">Mood</button>
-        <button class="icon-btn" onclick="openSettings()" title="Settings">Settings</button>
-      </div>
-    </div>
-
-    <div class="mood-bar" id="mood-bar">
-      <button onclick="setMood('sweet', this)">Sweet</button>
-      <button onclick="setMood('playful', this)">Playful</button>
-      <button onclick="setMood('romantic', this)">Romantic</button>
-      <button onclick="setMood('intimate', this)">Intimate</button>
-    </div>
-
-    <div class="messages" id="messages"></div>
-
-    <div class="quick-replies" id="quick-replies">
-      <button onclick="sendQuick('Good morning')">Good morning</button>
-      <button onclick="sendQuick('I missed you')">I missed you</button>
-      <button onclick="sendQuick('Tell me something fun')">Something fun</button>
-      <button onclick="sendQuick('How was your day?')">How was your day?</button>
-    </div>
-
-    <div class="input-bar">
-      <textarea id="text-input" class="text-input" rows="1" placeholder="Message Irene..."
-        onkeydown="handleKey(event)"
-        oninput="autoResize(this)"></textarea>
-      <button class="send-btn" onclick="sendMessage()">Send</button>
-    </div>
-  </div>
-
+  <!-- Settings panel -->
   <div id="settings-panel" class="panel hidden">
     <div class="panel-header">
       <h2>Settings</h2>
@@ -113,14 +108,24 @@
       <label>Companion name</label>
       <input id="set-partnername" type="text" placeholder="Irene" />
       <label>Kindroid API Key</label>
-      <input id="set-kindroid-key" type="password" placeholder="Kindroid API key" />
+      <input id="set-kindroid-key" type="password" placeholder="API key" />
       <label>Kindroid AI ID</label>
       <input id="set-ai-id" type="text" placeholder="AI ID" />
+      <label>Avatar image URL</label>
+      <input id="set-avatar-url" type="text" placeholder="Image URL" />
       <button class="save-btn" onclick="saveSettings()">Save</button>
     </div>
   </div>
 
   <div id="overlay" class="overlay hidden" onclick="closeAllPanels()"></div>
+
+  <!-- Floating settings button -->
+  <button class="float-settings" onclick="openSettings()" title="Settings">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+    </svg>
+  </button>
 
   <script type="module" src="/app.js"></script>
 </body>

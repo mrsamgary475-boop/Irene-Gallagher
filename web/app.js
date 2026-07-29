@@ -1,39 +1,41 @@
 // ── State ─────────────────────────────────────────────
-const DEFAULT_KEY = "kn_9686bcf1-b1dd-424c-b02b-c06e1441449c";
-const DEFAULT_AI_ID = "RwTcLQXQ3rMerS7qkZUC";
+const DEFAULT_KEY  = "kn_58c5a512-c997-408a-995d-197a04874169";
+const DEFAULT_AI   = "RwTcLQXQ3rMerS7qkZUC";
+const DEFAULT_IMG  = "https://images.pexels.com/photos/4442079/pexels-photo-4442079.jpeg?auto=compress&cs=tinysrgb&w=1080";
 
-let mood = localStorage.getItem("irene_mood") || "intimate";
-let username = localStorage.getItem("irene_username") || "baby";
-let partnerName = localStorage.getItem("irene_partnername") || "Irene";
-let kindroidKey = localStorage.getItem("irene_kindroid_key") || DEFAULT_KEY;
-let aiId = localStorage.getItem("irene_ai_id") || DEFAULT_AI_ID;
-let speakerOn = true;
-let recognition = null;
-let isListening = false;
+let mood       = localStorage.getItem("irene_mood")       || "intimate";
+let username   = localStorage.getItem("irene_username")   || "baby";
+let partner    = localStorage.getItem("irene_partnername")|| "Irene";
+let apiKey     = localStorage.getItem("irene_kindroid_key")|| DEFAULT_KEY;
+let aiId       = localStorage.getItem("irene_ai_id")       || DEFAULT_AI;
+let avatarUrl  = localStorage.getItem("irene_avatar_url")  || DEFAULT_IMG;
+let speakerOn  = true;
+let recognition= null;
+let isListening= false;
 
-const moodGreetings = {
-  sweet: "Hey baby, I've been waiting for you. How are you?",
-  playful: "Oh look who finally showed up.",
+const greetings = {
+  sweet:    "Hey baby, I've been waiting for you. How are you?",
+  playful:  "Oh look who finally showed up.",
   romantic: "You're here... that's everything.",
   intimate: "Mmm, hey you. I've been thinking about you.",
 };
 
-// ── DOM Helpers ──────────────────────────────────────
+// ── Helpers ──────────────────────────────────────────
 const $ = (id) => document.getElementById(id);
-const avatar = () => $("avatar-orb");
-const status = () => $("video-status");
 
 function setAvatarState(state) {
-  const a = avatar();
-  a.classList.remove("listening", "speaking", "thinking");
-  if (state) a.classList.add(state);
+  const bg = $("avatar-bg");
+  const badge = $("status-badge");
+  bg.classList.remove("listening", "speaking", "thinking");
+  badge.classList.remove("listening", "thinking");
+  if (state) { bg.classList.add(state); badge.classList.add(state); }
 }
 
 function setStatus(text, cls) {
-  const s = status();
-  s.textContent = text;
-  s.classList.remove("active", "listening");
-  if (cls) s.classList.add(cls);
+  $("status-text").textContent = text;
+  const badge = $("status-badge");
+  badge.classList.remove("listening", "thinking");
+  if (cls) badge.classList.add(cls);
 }
 
 // ── Speech ───────────────────────────────────────────
@@ -41,58 +43,48 @@ function speak(text) {
   if (!speakerOn || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();
   const clean = text.replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}]/gu, "");
-  const utter = new SpeechSynthesisUtterance(clean);
-  utter.rate = 0.95;
-  utter.pitch = 1.1;
+  const u = new SpeechSynthesisUtterance(clean);
+  u.rate = 0.95; u.pitch = 1.1;
   const voices = window.speechSynthesis.getVoices();
-  const female = voices.find((v) => /female|samantha|zira|google us english/i.test(v.name));
-  if (female) utter.voice = female;
-  utter.onstart = () => { setAvatarState("speaking"); setStatus("Speaking...", "active"); };
-  utter.onend = () => { setAvatarState(null); setStatus("Tap to talk"); };
-  window.speechSynthesis.speak(utter);
+  const f = voices.find(v => /female|samantha|zira|google us english/i.test(v.name));
+  if (f) u.voice = f;
+  u.onstart = () => { setAvatarState("speaking"); setStatus("Speaking"); };
+  u.onend   = () => { setAvatarState(null); setStatus("Connected"); };
+  window.speechSynthesis.speak(u);
 }
 
 function initRecognition() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SR) return null;
-  const rec = new SR();
-  rec.continuous = false;
-  rec.interimResults = false;
-  rec.lang = "en-US";
-  return rec;
+  const r = new SR();
+  r.continuous = false; r.interimResults = false; r.lang = "en-US";
+  return r;
 }
 
 // ── Chat API ─────────────────────────────────────────
 async function sendToBackend(message) {
   setAvatarState("thinking");
-  setStatus("Thinking...", "active");
+  setStatus("Thinking...", "thinking");
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message,
-        mood,
-        username,
-        partnerName,
-        apiKey: kindroidKey,
-        aiId,
-      }),
+      body: JSON.stringify({ message, mood, username, partnerName: partner, apiKey, aiId }),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     return data.reply || "Hmm, I didn't catch that.";
   } catch (err) {
-    console.error("Chat failed:", err);
-    return "I'm having trouble connecting right now. Try again in a moment.";
+    console.error("Chat error:", err);
+    return "I'm having trouble connecting right now.";
   }
 }
 
 // ── Transcript ────────────────────────────────────────
 function addTranscript(who, text) {
-  const t = $("video-transcript");
+  const t = $("transcript");
   const el = document.createElement("div");
-  el.className = `transcript-msg ${who}`;
+  el.className = `tmsg ${who}`;
   el.textContent = text;
   t.appendChild(el);
   t.scrollTop = t.scrollHeight;
@@ -110,120 +102,127 @@ async function sendText() {
   speak(reply);
 }
 
-function handleKey(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    sendText();
-  }
+function handleKey(e) {
+  if (e.key === "Enter") { e.preventDefault(); sendText(); }
 }
 
-// ── Voice Input ───────────────────────────────────────
-function startListening(event) {
-  if (event) event.preventDefault();
+// ── Voice ─────────────────────────────────────────────
+function startListening(e) {
+  if (e) e.preventDefault();
   if (isListening) return;
   recognition = initRecognition();
   if (!recognition) {
     addTranscript("her", "Voice input isn't supported in this browser. Try typing instead.");
     return;
   }
-  const btn = $("mic-btn");
-  btn.classList.add("active");
+  $("mic-btn").classList.add("active");
   isListening = true;
   setAvatarState("listening");
   setStatus("Listening...", "listening");
 
-  recognition.onresult = (e) => {
-    const text = e.results[0][0].transcript;
+  recognition.onresult = (ev) => {
+    const text = ev.results[0][0].transcript;
     addTranscript("me", text);
-    sendToBackend(text).then((reply) => {
-      addTranscript("her", reply);
-      speak(reply);
-    });
+    sendToBackend(text).then(reply => { addTranscript("her", reply); speak(reply); });
   };
-  recognition.onerror = () => {
-    setAvatarState(null);
-    setStatus("Tap to talk");
-  };
+  recognition.onerror = () => { setAvatarState(null); setStatus("Connected"); };
   recognition.onend = () => {
-    btn.classList.remove("active");
+    $("mic-btn").classList.remove("active");
     isListening = false;
-    if (!window.speechSynthesis.speaking) {
-      setAvatarState(null);
-      setStatus("Tap to talk");
+    if (!window.speechSynthesis || !window.speechSynthesis.speaking) {
+      setAvatarState(null); setStatus("Connected");
     }
   };
   recognition.start();
 }
 
-function stopListening(event) {
-  if (event) event.preventDefault();
+function stopListening(e) {
+  if (e) e.preventDefault();
   if (recognition && isListening) recognition.stop();
 }
 
 function toggleSpeaker() {
   speakerOn = !speakerOn;
-  $("speaker-btn").querySelector(".ctrl-icon").textContent = speakerOn ? "On" : "Off";
+  const btn = $("speaker-btn");
+  btn.style.opacity = speakerOn ? "1" : "0.5";
   if (!speakerOn && window.speechSynthesis) {
     window.speechSynthesis.cancel();
-    setAvatarState(null);
-    setStatus("Tap to talk");
+    setAvatarState(null); setStatus("Connected");
   }
 }
 
 // ── Moods ────────────────────────────────────────────
-function setMood(newMood, btn) {
-  mood = newMood;
-  localStorage.setItem("irene_mood", newMood);
-  document.querySelectorAll(".mood-pill").forEach((b) => b.classList.remove("active"));
+function setMood(m, btn) {
+  mood = m;
+  localStorage.setItem("irene_mood", m);
+  document.querySelectorAll(".mood-pill").forEach(b => b.classList.remove("active"));
   if (btn) btn.classList.add("active");
+}
+
+// ── Fullscreen ───────────────────────────────────────
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen().catch(() => {});
+  }
+}
+
+// ── End call ─────────────────────────────────────────
+function endCall() {
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (recognition && isListening) recognition.stop();
+  setStatus("Call Ended");
+  setAvatarState(null);
+  $("transcript").innerHTML = "";
+  setTimeout(() => {
+    setStatus("Connected");
+    addTranscript("her", greetings[mood] || greetings.intimate);
+  }, 1500);
 }
 
 // ── Settings ─────────────────────────────────────────
 function openSettings() {
   $("set-username").value = username;
-  $("set-partnername").value = partnerName;
-  $("set-kindroid-key").value = kindroidKey;
+  $("set-partnername").value = partner;
+  $("set-kindroid-key").value = apiKey;
   $("set-ai-id").value = aiId;
+  $("set-avatar-url").value = avatarUrl;
   $("settings-panel").classList.remove("hidden");
   $("overlay").classList.remove("hidden");
 }
 
 function saveSettings() {
-  username = $("set-username").value.trim() || "baby";
-  partnerName = $("set-partnername").value.trim() || "Irene";
-  kindroidKey = $("set-kindroid-key").value.trim() || DEFAULT_KEY;
-  aiId = $("set-ai-id").value.trim() || DEFAULT_AI_ID;
+  username  = $("set-username").value.trim()    || "baby";
+  partner   = $("set-partnername").value.trim() || "Irene";
+  apiKey    = $("set-kindroid-key").value.trim()|| DEFAULT_KEY;
+  aiId      = $("set-ai-id").value.trim()        || DEFAULT_AI;
+  avatarUrl = $("set-avatar-url").value.trim()  || DEFAULT_IMG;
   localStorage.setItem("irene_username", username);
-  localStorage.setItem("irene_partnername", partnerName);
-  localStorage.setItem("irene_kindroid_key", kindroidKey);
+  localStorage.setItem("irene_partnername", partner);
+  localStorage.setItem("irene_kindroid_key", apiKey);
   localStorage.setItem("irene_ai_id", aiId);
+  localStorage.setItem("irene_avatar_url", avatarUrl);
+  $("avatar-img").src = avatarUrl;
   closeAllPanels();
 }
 
-function closePanel(id) {
-  $(id).classList.add("hidden");
-  $("overlay").classList.add("hidden");
-}
-
-function closeAllPanels() {
-  $("settings-panel").classList.add("hidden");
-  $("overlay").classList.add("hidden");
-}
+function closePanel(id) { $(id).classList.add("hidden"); $("overlay").classList.add("hidden"); }
+function closeAllPanels() { $("settings-panel").classList.add("hidden"); $("overlay").classList.add("hidden"); }
 
 // ── Init ─────────────────────────────────────────────
 if (window.speechSynthesis) {
   window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 }
+$("avatar-img").src = avatarUrl;
+setTimeout(() => addTranscript("her", greetings[mood] || greetings.intimate), 800);
 
-setTimeout(() => {
-  addTranscript("her", moodGreetings[mood] || moodGreetings.intimate);
-}, 800);
-
-// Expose to inline handlers
 window.setMood = setMood;
 window.toggleSpeaker = toggleSpeaker;
+window.toggleFullscreen = toggleFullscreen;
 window.startListening = startListening;
 window.stopListening = stopListening;
+window.endCall = endCall;
 window.openSettings = openSettings;
 window.saveSettings = saveSettings;
 window.closePanel = closePanel;
