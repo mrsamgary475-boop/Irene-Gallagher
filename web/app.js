@@ -1,17 +1,16 @@
-// ── State ─────────────────────────────────────────────
-const DEFAULT_KEY  = "kn_58c5a512-c997-408a-995d-197a04874169";
-const DEFAULT_AI   = "RwTcLQXQ3rMerS7qkZUC";
-const DEFAULT_IMG  = "https://images.pexels.com/photos/4442079/pexels-photo-4442079.jpeg?auto=compress&cs=tinysrgb&w=1080";
+// ── Constants ────────────────────────────────────────
+const DEFAULT_KEY = "kn_58c5a512-c997-408a-995d-197a04874169";
+const DEFAULT_AI  = "RwTcLQXQ3rMerS7qkZUC";
 
-let mood       = localStorage.getItem("irene_mood")       || "intimate";
-let username   = localStorage.getItem("irene_username")   || "baby";
-let partner    = localStorage.getItem("irene_partnername")|| "Irene";
+// ── State ─────────────────────────────────────────────
+let mood       = localStorage.getItem("irene_mood")        || "intimate";
+let username   = localStorage.getItem("irene_username")    || "baby";
+let partner    = localStorage.getItem("irene_partnername") || "Irene";
 let apiKey     = localStorage.getItem("irene_kindroid_key")|| DEFAULT_KEY;
 let aiId       = localStorage.getItem("irene_ai_id")       || DEFAULT_AI;
-let avatarUrl  = localStorage.getItem("irene_avatar_url")  || DEFAULT_IMG;
-let speakerOn  = true;
-let recognition= null;
-let isListening= false;
+let callActive = false;
+let recognition = null;
+let isListening = false;
 
 const greetings = {
   sweet:    "Hey baby, I've been waiting for you. How are you?",
@@ -20,27 +19,24 @@ const greetings = {
   intimate: "Mmm, hey you. I've been thinking about you.",
 };
 
-// ── Helpers ──────────────────────────────────────────
+// ── DOM ───────────────────────────────────────────────
 const $ = (id) => document.getElementById(id);
 
-function setAvatarState(state) {
-  const bg = $("avatar-bg");
-  const badge = $("status-badge");
-  bg.classList.remove("listening", "speaking", "thinking");
-  badge.classList.remove("listening", "thinking");
-  if (state) { bg.classList.add(state); badge.classList.add(state); }
+// ── Top badge state ───────────────────────────────────
+function setBadge(sub, dotCls) {
+  $("top-sub").textContent = sub;
+  const dot = $("top-dot");
+  dot.classList.remove("listening", "thinking");
+  if (dotCls) dot.classList.add(dotCls);
 }
 
-function setStatus(text, cls) {
-  $("status-text").textContent = text;
-  const badge = $("status-badge");
-  badge.classList.remove("listening", "thinking");
-  if (cls) badge.classList.add(cls);
+// ── Speech synthesis ──────────────────────────────────
+function shouldSpeak() {
+  return $("speak-toggle").checked && !!window.speechSynthesis;
 }
 
-// ── Speech ───────────────────────────────────────────
 function speak(text) {
-  if (!speakerOn || !window.speechSynthesis) return;
+  if (!shouldSpeak()) return;
   window.speechSynthesis.cancel();
   const clean = text.replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}]/gu, "");
   const u = new SpeechSynthesisUtterance(clean);
@@ -48,23 +44,21 @@ function speak(text) {
   const voices = window.speechSynthesis.getVoices();
   const f = voices.find(v => /female|samantha|zira|google us english/i.test(v.name));
   if (f) u.voice = f;
-  u.onstart = () => { setAvatarState("speaking"); setStatus("Speaking"); };
-  u.onend   = () => { setAvatarState(null); setStatus("Connected"); };
+  u.onstart = () => setBadge("Speaking...");
+  u.onend   = () => setBadge(callActive ? "In call" : "Kindroid connected");
   window.speechSynthesis.speak(u);
 }
 
-function initRecognition() {
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SR) return null;
-  const r = new SR();
-  r.continuous = false; r.interimResults = false; r.lang = "en-US";
-  return r;
-}
-
 // ── Chat API ─────────────────────────────────────────
+const MOOD_PROMPTS = {
+  sweet:    "Be warm, loving, and affectionate. Use sweet pet names.",
+  playful:  "Be playful, teasing, and flirtatious.",
+  romantic: "Be deeply romantic, poetic, and sensual.",
+  intimate: "Be bold, seductive, and uninhibited. Adults in a committed relationship.",
+};
+
 async function sendToBackend(message) {
-  setAvatarState("thinking");
-  setStatus("Thinking...", "thinking");
+  setBadge("Thinking...", "thinking");
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
@@ -77,11 +71,13 @@ async function sendToBackend(message) {
   } catch (err) {
     console.error("Chat error:", err);
     return "I'm having trouble connecting right now.";
+  } finally {
+    setBadge(callActive ? "In call" : "Kindroid connected");
   }
 }
 
 // ── Transcript ────────────────────────────────────────
-function addTranscript(who, text) {
+function addMsg(who, text) {
   const t = $("transcript");
   const el = document.createElement("div");
   el.className = `tmsg ${who}`;
@@ -90,16 +86,19 @@ function addTranscript(who, text) {
   t.scrollTop = t.scrollHeight;
 }
 
-// ── Send / Receive ────────────────────────────────────
+// ── Send ─────────────────────────────────────────────
 async function sendText() {
   const input = $("text-input");
   const text = input.value.trim();
   if (!text) return;
   input.value = "";
-  addTranscript("me", text);
+  addMsg("me", text);
   const reply = await sendToBackend(text);
-  addTranscript("her", reply);
+  addMsg("her", reply);
   speak(reply);
+  if ($("textme-toggle").checked) {
+    console.log("[Text me]", reply);
+  }
 }
 
 function handleKey(e) {
@@ -107,32 +106,35 @@ function handleKey(e) {
 }
 
 // ── Voice ─────────────────────────────────────────────
+function initRecognition() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return null;
+  const r = new SR();
+  r.continuous = false; r.interimResults = false; r.lang = "en-US";
+  return r;
+}
+
 function startListening(e) {
   if (e) e.preventDefault();
   if (isListening) return;
   recognition = initRecognition();
   if (!recognition) {
-    addTranscript("her", "Voice input isn't supported in this browser. Try typing instead.");
+    addMsg("her", "Voice input isn't supported in this browser. Try typing instead.");
     return;
   }
-  $("mic-btn").classList.add("active");
+  $("hold-btn").classList.add("active");
+  $("mic-status-btn").textContent = "Mic active";
+  $("mic-status-btn").classList.add("active");
   isListening = true;
-  setAvatarState("listening");
-  setStatus("Listening...", "listening");
+  setBadge("Listening...", "listening");
 
   recognition.onresult = (ev) => {
     const text = ev.results[0][0].transcript;
-    addTranscript("me", text);
-    sendToBackend(text).then(reply => { addTranscript("her", reply); speak(reply); });
+    addMsg("me", text);
+    sendToBackend(text).then(reply => { addMsg("her", reply); speak(reply); });
   };
-  recognition.onerror = () => { setAvatarState(null); setStatus("Connected"); };
-  recognition.onend = () => {
-    $("mic-btn").classList.remove("active");
-    isListening = false;
-    if (!window.speechSynthesis || !window.speechSynthesis.speaking) {
-      setAvatarState(null); setStatus("Connected");
-    }
-  };
+  recognition.onerror = () => resetMicUI();
+  recognition.onend   = () => resetMicUI();
   recognition.start();
 }
 
@@ -141,25 +143,53 @@ function stopListening(e) {
   if (recognition && isListening) recognition.stop();
 }
 
-function toggleSpeaker() {
-  speakerOn = !speakerOn;
-  const btn = $("speaker-btn");
-  btn.style.opacity = speakerOn ? "1" : "0.5";
-  if (!speakerOn && window.speechSynthesis) {
-    window.speechSynthesis.cancel();
-    setAvatarState(null); setStatus("Connected");
+function resetMicUI() {
+  $("hold-btn").classList.remove("active");
+  $("mic-status-btn").textContent = "Mic ready";
+  $("mic-status-btn").classList.remove("active");
+  isListening = false;
+  setBadge(callActive ? "In call" : "Kindroid connected");
+}
+
+// ── Call toggle ───────────────────────────────────────
+function toggleCall() {
+  callActive = !callActive;
+  const btn = $("call-btn");
+  if (callActive) {
+    btn.textContent = "End call";
+    btn.classList.add("active");
+    setBadge("In call");
+    addMsg("her", greetings[mood] || greetings.intimate);
+  } else {
+    btn.textContent = "Start call";
+    btn.classList.remove("active");
+    setBadge("Kindroid connected");
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (recognition && isListening) recognition.stop();
+    $("transcript").innerHTML = "";
   }
 }
 
-// ── Moods ────────────────────────────────────────────
-function setMood(m, btn) {
-  mood = m;
-  localStorage.setItem("irene_mood", m);
-  document.querySelectorAll(".mood-pill").forEach(b => b.classList.remove("active"));
-  if (btn) btn.classList.add("active");
+// ── Camera toggle ─────────────────────────────────────
+function toggleCamera() {
+  const btn = $("camera-btn");
+  const video = $("bg-video");
+  const isMuted = video.hasAttribute("data-cam-off");
+  if (isMuted) {
+    video.removeAttribute("data-cam-off");
+    video.style.opacity = "1";
+    btn.textContent = "Camera off";
+  } else {
+    video.setAttribute("data-cam-off", "1");
+    video.style.opacity = "0.15";
+    btn.textContent = "Camera on";
+    btn.classList.add("active");
+    // revert active style after toggle
+    setTimeout(() => btn.classList.remove("active"), 150);
+  }
 }
 
-// ── Fullscreen ───────────────────────────────────────
+// ── Fullscreen ────────────────────────────────────────
 function toggleFullscreen() {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen().catch(() => {});
@@ -168,64 +198,61 @@ function toggleFullscreen() {
   }
 }
 
-// ── End call ─────────────────────────────────────────
-function endCall() {
-  if (window.speechSynthesis) window.speechSynthesis.cancel();
-  if (recognition && isListening) recognition.stop();
-  setStatus("Call Ended");
-  setAvatarState(null);
-  $("transcript").innerHTML = "";
-  setTimeout(() => {
-    setStatus("Connected");
-    addTranscript("her", greetings[mood] || greetings.intimate);
-  }, 1500);
-}
+document.addEventListener("fullscreenchange", () => {
+  $("fullscreen-btn").textContent =
+    document.fullscreenElement ? "Exit full screen" : "Full screen";
+});
 
 // ── Settings ─────────────────────────────────────────
 function openSettings() {
-  $("set-username").value = username;
+  $("set-username").value    = username;
   $("set-partnername").value = partner;
-  $("set-kindroid-key").value = apiKey;
-  $("set-ai-id").value = aiId;
-  $("set-avatar-url").value = avatarUrl;
+  $("set-kindroid-key").value= apiKey;
+  $("set-ai-id").value       = aiId;
+  $("set-mood").value        = mood;
   $("settings-panel").classList.remove("hidden");
   $("overlay").classList.remove("hidden");
 }
 
 function saveSettings() {
-  username  = $("set-username").value.trim()    || "baby";
-  partner   = $("set-partnername").value.trim() || "Irene";
-  apiKey    = $("set-kindroid-key").value.trim()|| DEFAULT_KEY;
+  username  = $("set-username").value.trim()     || "baby";
+  partner   = $("set-partnername").value.trim()  || "Irene";
+  apiKey    = $("set-kindroid-key").value.trim() || DEFAULT_KEY;
   aiId      = $("set-ai-id").value.trim()        || DEFAULT_AI;
-  avatarUrl = $("set-avatar-url").value.trim()  || DEFAULT_IMG;
-  localStorage.setItem("irene_username", username);
+  mood      = $("set-mood").value;
+  localStorage.setItem("irene_username",    username);
   localStorage.setItem("irene_partnername", partner);
-  localStorage.setItem("irene_kindroid_key", apiKey);
-  localStorage.setItem("irene_ai_id", aiId);
-  localStorage.setItem("irene_avatar_url", avatarUrl);
-  $("avatar-img").src = avatarUrl;
-  closeAllPanels();
+  localStorage.setItem("irene_kindroid_key",apiKey);
+  localStorage.setItem("irene_ai_id",       aiId);
+  localStorage.setItem("irene_mood",        mood);
+  closePanel();
 }
 
-function closePanel(id) { $(id).classList.add("hidden"); $("overlay").classList.add("hidden"); }
-function closeAllPanels() { $("settings-panel").classList.add("hidden"); $("overlay").classList.add("hidden"); }
+function closePanel() {
+  $("settings-panel").classList.add("hidden");
+  $("overlay").classList.add("hidden");
+}
+
+// ── Long-press badge to open settings ────────────────
+let pressTimer = null;
+$("top-badge").addEventListener("mousedown",  () => { pressTimer = setTimeout(openSettings, 600); });
+$("top-badge").addEventListener("touchstart", () => { pressTimer = setTimeout(openSettings, 600); }, {passive:true});
+["mouseup","mouseleave","touchend","touchcancel"].forEach(ev =>
+  $("top-badge").addEventListener(ev, () => clearTimeout(pressTimer))
+);
 
 // ── Init ─────────────────────────────────────────────
 if (window.speechSynthesis) {
   window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 }
-$("avatar-img").src = avatarUrl;
-setTimeout(() => addTranscript("her", greetings[mood] || greetings.intimate), 800);
 
-window.setMood = setMood;
-window.toggleSpeaker = toggleSpeaker;
+// Make functions available to inline handlers
+window.toggleCall       = toggleCall;
+window.toggleCamera     = toggleCamera;
 window.toggleFullscreen = toggleFullscreen;
-window.startListening = startListening;
-window.stopListening = stopListening;
-window.endCall = endCall;
-window.openSettings = openSettings;
-window.saveSettings = saveSettings;
-window.closePanel = closePanel;
-window.closeAllPanels = closeAllPanels;
-window.sendText = sendText;
-window.handleKey = handleKey;
+window.startListening   = startListening;
+window.stopListening    = stopListening;
+window.sendText         = sendText;
+window.handleKey        = handleKey;
+window.saveSettings     = saveSettings;
+window.closePanel       = closePanel;
